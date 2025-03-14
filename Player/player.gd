@@ -3,6 +3,9 @@ extends CharacterBody3D
 # weapon
 @onready var weapon: Node3D = $weapon
 
+#Srodek Gracza
+@onready var srodek: Node3D = $Srodek
+
 
 # looking
 @onready var neck: Node3D = $neck
@@ -56,15 +59,15 @@ func _input(event: InputEvent) -> void:
 		head.rotation.x = clamp(head.rotation.x, deg_to_rad(-89), deg_to_rad(89))
 	
 func _physics_process(delta: float) -> void:
-	
+	AaGlobal.Player = self
 	# getting movement input
 	var input_dir := Input.get_vector("walk_left", "walk_right", "walk_forward", "walk_backwards")
 	
 	if not is_on_floor() and not wallrunning:
 		if velocity.y >= 0:
-			velocity += get_gravity() * delta
-		else:
 			velocity += get_gravity() * delta * 2
+		else:
+			velocity += get_gravity() * delta * 4
 
 	if is_on_floor() or is_on_wall():
 		double_jump_controller = 1

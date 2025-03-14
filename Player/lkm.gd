@@ -21,7 +21,7 @@ var przegrzanie:bool = false
 
 func _process(delta: float) -> void:
 	szybkosc_strzalu -= delta
-	
+
 	$CSGBox3D/Miejsce_Spawnu_Pocisku.rotation = rotation
 	
 	if GlobalWeaponTimer.amunicja_lkm >= 30:
@@ -36,7 +36,7 @@ func _process(delta: float) -> void:
 		GlobalWeaponTimer.timer_ladowanie = 0.3
 		szybkosc_strzalu = gun_stats.szybkosc_strzalu
 		GlobalWeaponTimer.amunicja_lkm += 1
-		Shot()
+		Shot(delta)
 		
 	if not Input.is_action_pressed("strzał") and szybkosc_strzalu <= 0 :
 		GlobalWeaponTimer.timer = true
@@ -47,8 +47,18 @@ var bullet_path = load("res://Player/bullet.tscn")
 @onready var miejsce_spawnu_pocisku: Node3D = $CSGBox3D/Miejsce_Spawnu_Pocisku
 
 
-func Shot():
+func Shot(delta):
+	#Odrzut 
+	if not AaGlobal.Player.is_on_floor():
+		var dystans = miejsce_spawnu_pocisku.global_position - AaGlobal.Player.srodek.global_position
+		print(dystans)
+		AaGlobal.Player.velocity += -(dystans) * 3
 	
+	if AaGlobal.Player.is_on_floor():
+		var dystans = miejsce_spawnu_pocisku.global_position - AaGlobal.Player.srodek.global_position
+		print(dystans)
+		AaGlobal.Player.velocity += Vector3(-dystans.x * 8, - dystans.y, - dystans.z * 8)
+
 	var bullet = bullet_path.instantiate()
 	get_tree().current_scene.add_child(bullet) 
 	bullet.dire = global_rotation

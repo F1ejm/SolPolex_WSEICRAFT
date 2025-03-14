@@ -2,6 +2,8 @@ extends Node
 
 var Is_Playing: bool
 
+var Player: CharacterBody3D
+
 func _ready():
 	Is_Playing = true
 
