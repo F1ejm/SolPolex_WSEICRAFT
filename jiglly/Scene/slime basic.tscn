@@ -34,15 +34,15 @@ func _physics_process(delta: float) -> void:
 "
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lw1ee"]
-size = Vector3(1, 0.908173, 0.754448)
+size = Vector3(1, 1.23681, 1.08271)
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
 script = SubResource("GDScript_e85o3")
 
 [node name="SoftBody3D" type="SoftBody3D" parent="."]
 mesh = ExtResource("1_lw1ee")
-simulation_precision = 3
+simulation_precision = 50
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.274058, -0.0971794)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.117313, 0.952833, 0.0986559)
 shape = SubResource("BoxShape3D_lw1ee")
