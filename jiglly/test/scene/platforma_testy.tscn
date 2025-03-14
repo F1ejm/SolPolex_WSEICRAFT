@@ -32,4 +32,4 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 0.857639, 0.514252, 0, -0.514252, 0.857639, 1.65064, 2.82423, 5.97324)
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("1_l30eh")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 1.12615, 1.94683)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 1.40275, -0.183375)
