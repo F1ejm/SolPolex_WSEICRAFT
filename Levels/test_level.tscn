@@ -1,0 +1,172 @@
+[gd_scene load_steps=13 format=3 uid="uid://fxdxyctu1vje"]
+
+[ext_resource type="PackedScene" uid="uid://dx5od7v27ccn6" path="res://Map/pudłoga.tscn" id="2_00vsl"]
+[ext_resource type="PackedScene" uid="uid://bihx6qd6hllbr" path="res://Player/Player.tscn" id="2_4k50d"]
+[ext_resource type="PackedScene" uid="uid://yuqhps743lob" path="res://Map/stół.tscn" id="3_4k50d"]
+[ext_resource type="PackedScene" uid="uid://fq8k5u0e1p54" path="res://Map/wózek.tscn" id="4_3158n"]
+[ext_resource type="PackedScene" uid="uid://cp3quw2dcwbgj" path="res://Map/szafka.tscn" id="5_ub4j8"]
+[ext_resource type="PackedScene" uid="uid://d0onml7506vkr" path="res://Map/butla.tscn" id="6_4t6x8"]
+[ext_resource type="PackedScene" uid="uid://ctj2wt28hphsg" path="res://Map/butla_2.tscn" id="7_tc6tp"]
+[ext_resource type="PackedScene" uid="uid://ddt35so4n16ha" path="res://Map/fiolba.tscn" id="8_k8b6b"]
+[ext_resource type="PackedScene" uid="uid://ctcmcmqnjfk3f" path="res://Map/mikroskop.tscn" id="9_lx7qo"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_00vsl"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_4k50d"]
+sky_material = SubResource("ProceduralSkyMaterial_00vsl")
+
+[sub_resource type="Environment" id="Environment_i4ak4"]
+background_mode = 2
+sky = SubResource("Sky_4k50d")
+tonemap_mode = 2
+
+[node name="TestLevel" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_i4ak4")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+light_energy = 0.0
+shadow_enabled = true
+
+[node name="Player" parent="." instance=ExtResource("2_4k50d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.949858, 1.35222, -1.77008)
+
+[node name="podłogi i sufity" type="Node3D" parent="."]
+
+[node name="StaticBody3D" parent="podłogi i sufity" instance=ExtResource("2_00vsl")]
+
+[node name="StaticBody3D2" parent="podłogi i sufity" instance=ExtResource("2_00vsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="StaticBody3D3" parent="podłogi i sufity" instance=ExtResource("2_00vsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.001791, 0.00490952, -3.99701)
+
+[node name="StaticBody3D4" parent="podłogi i sufity" instance=ExtResource("2_00vsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.00179, 0.00490952, -3.99701)
+
+[node name="StaticBody3D25" parent="podłogi i sufity" instance=ExtResource("2_00vsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
+
+[node name="StaticBody3D26" parent="podłogi i sufity" instance=ExtResource("2_00vsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
+
+[node name="StaticBody3D27" parent="podłogi i sufity" instance=ExtResource("2_00vsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.00179, 0.00490952, -3.99701)
+
+[node name="StaticBody3D28" parent="podłogi i sufity" instance=ExtResource("2_00vsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.0018, 0.00490952, -3.99701)
+
+[node name="StaticBody3D29" parent="podłogi i sufity" instance=ExtResource("2_00vsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+
+[node name="StaticBody3D30" parent="podłogi i sufity" instance=ExtResource("2_00vsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 8)
+
+[node name="StaticBody3D31" parent="podłogi i sufity" instance=ExtResource("2_00vsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.001791, 0.00490952, 4.00299)
+
+[node name="StaticBody3D32" parent="podłogi i sufity" instance=ExtResource("2_00vsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.00179, 0.00490952, 4.00299)
+
+[node name="StaticBody3D33" parent="podłogi i sufity" instance=ExtResource("2_00vsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 8)
+
+[node name="StaticBody3D34" parent="podłogi i sufity" instance=ExtResource("2_00vsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 8)
+
+[node name="StaticBody3D35" parent="podłogi i sufity" instance=ExtResource("2_00vsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.00179, 0.00490952, 4.00299)
+
+[node name="StaticBody3D36" parent="podłogi i sufity" instance=ExtResource("2_00vsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.0018, 0.00490952, 4.00299)
+
+[node name="StaticBody3D5" parent="podłogi i sufity" instance=ExtResource("2_00vsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+
+[node name="StaticBody3D6" parent="podłogi i sufity" instance=ExtResource("2_00vsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 5, 0)
+
+[node name="StaticBody3D7" parent="podłogi i sufity" instance=ExtResource("2_00vsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.001791, 5.00491, -3.99701)
+
+[node name="StaticBody3D8" parent="podłogi i sufity" instance=ExtResource("2_00vsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.00179, 5.00491, -3.99701)
+
+[node name="StaticBody3D9" parent="podłogi i sufity" instance=ExtResource("2_00vsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 5, 0)
+
+[node name="StaticBody3D10" parent="podłogi i sufity" instance=ExtResource("2_00vsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 5, 0)
+
+[node name="StaticBody3D11" parent="podłogi i sufity" instance=ExtResource("2_00vsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.00179, 5.00491, -3.99701)
+
+[node name="StaticBody3D12" parent="podłogi i sufity" instance=ExtResource("2_00vsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0018, 5.00491, -3.99701)
+
+[node name="StaticBody3D13" parent="podłogi i sufity" instance=ExtResource("2_00vsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 5, 0)
+
+[node name="StaticBody3D14" parent="podłogi i sufity" instance=ExtResource("2_00vsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 5, 0)
+
+[node name="StaticBody3D15" parent="podłogi i sufity" instance=ExtResource("2_00vsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.00179, 5.00491, -3.99701)
+
+[node name="StaticBody3D16" parent="podłogi i sufity" instance=ExtResource("2_00vsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0018, 5.00491, -3.99701)
+
+[node name="StaticBody3D17" parent="podłogi i sufity" instance=ExtResource("2_00vsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 5, 8)
+
+[node name="StaticBody3D18" parent="podłogi i sufity" instance=ExtResource("2_00vsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 5, 8)
+
+[node name="StaticBody3D19" parent="podłogi i sufity" instance=ExtResource("2_00vsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.00179, 5.00491, 4.00299)
+
+[node name="StaticBody3D20" parent="podłogi i sufity" instance=ExtResource("2_00vsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0018, 5.00491, 4.00299)
+
+[node name="StaticBody3D21" parent="podłogi i sufity" instance=ExtResource("2_00vsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 8)
+
+[node name="StaticBody3D22" parent="podłogi i sufity" instance=ExtResource("2_00vsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 5, 8)
+
+[node name="StaticBody3D23" parent="podłogi i sufity" instance=ExtResource("2_00vsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.001791, 5.00491, 4.00299)
+
+[node name="StaticBody3D24" parent="podłogi i sufity" instance=ExtResource("2_00vsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.00179, 5.00491, 4.00299)
+
+[node name="StaticBody3D" parent="." instance=ExtResource("3_4k50d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.78391, 0.0585938, 7.2432)
+
+[node name="wózek" parent="." instance=ExtResource("4_3158n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 7)
+
+[node name="szafka" parent="." instance=ExtResource("5_ub4j8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9755, 0.0964905, 3.73106)
+
+[node name="butla" parent="." instance=ExtResource("6_4t6x8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.331, 0.941428, 6.39318)
+
+[node name="butla2" parent="." instance=ExtResource("7_tc6tp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.36346, 0.940026, 6.91516)
+
+[node name="fiolba" parent="." instance=ExtResource("8_k8b6b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.26891, 0.937825, 7.49467)
+
+[node name="fiolba2" parent="." instance=ExtResource("8_k8b6b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5605, 0.789438, 6.77783)
+
+[node name="butla3" parent="." instance=ExtResource("7_tc6tp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.7778, 0.0635033, 2.53307)
+
+[node name="mikroskop" parent="." instance=ExtResource("9_lx7qo")]
+transform = Transform3D(0.902623, 0, -0.430432, 0, 1, 0, 0.430432, 0, 0.902623, 9.96566, 0.947633, 7.44602)

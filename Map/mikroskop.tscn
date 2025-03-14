@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctcmcmqnjfk3f"]
+
+[ext_resource type="PackedScene" uid="uid://pa4otptn1kd6" path="res://Assets/3D/mikroskopo.glb" id="1_efk3h"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m1nd7"]
+size = Vector3(1, 0.546753, 0.427368)
+
+[node name="mikroskop" type="StaticBody3D"]
+
+[node name="mikroskopo" parent="." instance=ExtResource("1_efk3h")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.268189, -0.0107379)
+shape = SubResource("BoxShape3D_m1nd7")

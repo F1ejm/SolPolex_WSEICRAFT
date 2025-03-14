@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddt35so4n16ha"]
+
+[ext_resource type="PackedScene" uid="uid://cothqwwehbdqv" path="res://Assets/3D/fiolba.glb" id="1_h3yc0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_85xob"]
+size = Vector3(0.158447, 0.502441, 1)
+
+[node name="fiolba" type="StaticBody3D"]
+
+[node name="fiolba" parent="." instance=ExtResource("1_h3yc0")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00256348, 0.248779, 0)
+shape = SubResource("BoxShape3D_85xob")

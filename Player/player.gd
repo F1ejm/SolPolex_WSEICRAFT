@@ -14,7 +14,7 @@ const mouse_sens = 0.2
 @export var walk_speed = 5.0
 @export var sprint_speed = 8.0
 @export var crouch_speed = 3.0
-@export var jump_force = 4.5
+@export var jump_force = 6.0
 var current_speed = 5.0
 
 # movement
@@ -61,7 +61,10 @@ func _physics_process(delta: float) -> void:
 	var input_dir := Input.get_vector("walk_left", "walk_right", "walk_forward", "walk_backwards")
 	
 	if not is_on_floor() and not wallrunning:
-		velocity += get_gravity() * delta
+		if velocity.y >= 0:
+			velocity += get_gravity() * delta
+		else:
+			velocity += get_gravity() * delta * 2
 
 	if is_on_floor() or is_on_wall():
 		double_jump_controller = 1
@@ -165,10 +168,8 @@ func wall_run(delta):
 		
 		if ray_cast_lewo.is_colliding():
 			camera_3d.rotation.z = move_toward(camera_3d.rotation.z, -deg_to_rad(15.0), delta * 2)
-			print("lewo")
 		elif ray_cast_prawo.is_colliding():
 			camera_3d.rotation.z = move_toward(camera_3d.rotation.z, -deg_to_rad(-15.0), delta * 2)
-			print("prawo")
 	else:
 		wallrunning = false
 		

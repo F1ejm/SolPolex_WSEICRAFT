@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://fq8k5u0e1p54"]
+
+[ext_resource type="PackedScene" uid="uid://bcsgattf2gvuj" path="res://Assets/3D/wózek.glb" id="1_6nlm8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ahixr"]
+size = Vector3(1, 1, 1.62256)
+
+[node name="wózek" type="StaticBody3D"]
+
+[node name="wózek" parent="." instance=ExtResource("1_6nlm8")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.514476, -0.010498)
+shape = SubResource("BoxShape3D_ahixr")
