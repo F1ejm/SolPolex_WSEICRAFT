@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cp3quw2dcwbgj"]
+
+[ext_resource type="PackedScene" uid="uid://bksupacgtcajo" path="res://Assets/3D/szafka.glb" id="1_38v6b"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ey4m3"]
+size = Vector3(1, 1.77539, 1.45856)
+
+[node name="szafka" type="StaticBody3D"]
+
+[node name="szafka" parent="." instance=ExtResource("1_38v6b")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.894408, -0.00259399)
+shape = SubResource("BoxShape3D_ey4m3")

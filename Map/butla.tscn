@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0onml7506vkr"]
+
+[ext_resource type="PackedScene" uid="uid://i1880i3rc40j" path="res://Assets/3D/butla.glb" id="1_cba8c"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nd4yq"]
+size = Vector3(0.245605, 0.376709, 1)
+
+[node name="butla" type="StaticBody3D"]
+
+[node name="butla" parent="." instance=ExtResource("1_cba8c")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00170898, 0.189087, 0)
+shape = SubResource("BoxShape3D_nd4yq")
