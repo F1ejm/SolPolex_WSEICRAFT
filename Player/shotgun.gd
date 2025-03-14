@@ -41,6 +41,16 @@ var bullet_path = load("res://Player/bullet.tscn")
 
 
 func Shot():
+	# Odrzut
+	if not AaGlobal.Player.is_on_floor():
+		var dystans = miejsce_spawnu_pocisku.global_position - AaGlobal.Player.srodek.global_position
+		print(dystans)
+		AaGlobal.Player.velocity = -(dystans) * 10
+	if AaGlobal.Player.is_on_floor():
+		var dystans = miejsce_spawnu_pocisku.global_position - AaGlobal.Player.srodek.global_position
+		print(dystans)
+		AaGlobal.Player.velocity = Vector3(-dystans.x * 20, -dystans.y * 10, -dystans.z * 20)
+	
 	
 	var bullet = bullet_path.instantiate()
 	get_tree().current_scene.add_child(bullet) 

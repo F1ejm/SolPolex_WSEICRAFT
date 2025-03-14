@@ -25,7 +25,7 @@ transform = Transform3D(0.517665, 0, 0, 0, 0.408402, 0, 0, 0, 2.41428, 0, 0, 0)
 visible = false
 
 [node name="Miejsce_Spawnu_Pocisku" type="Node3D" parent="CSGBox3D"]
-transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 0.999999, 0, 0, -0.51888)
+transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 0.999999, 0, 0, -0.91188)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="CSGBox3D/Miejsce_Spawnu_Pocisku"]
 transform = Transform3D(0.38635, 0, 0, 0, 0.661114, 0, 0, 0, 0.414203, 0, 0, -0.147186)
