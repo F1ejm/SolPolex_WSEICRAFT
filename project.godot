@@ -14,6 +14,16 @@ config/name="SolPolex_WSEICRAFT"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://Assets/2D/icon.svg"
 
+[file_customization]
+
+folder_colors={
+"res://Assets/": "red",
+"res://Game Stuff/": "purple",
+"res://Main/": "blue",
+"res://Player/": "orange",
+"res://UI/": "green"
+}
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
