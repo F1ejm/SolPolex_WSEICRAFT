@@ -32,6 +32,11 @@ folder_colors={
 "res://jiglly/": "pink"
 }
 
+[global_group]
+
+Enemy=""
+bullet=""
+
 [input]
 
 walk_left={

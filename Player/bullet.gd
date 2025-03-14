@@ -32,6 +32,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		body.velocity = -(body.velocity)
 		
 	if body.is_in_group("Enemy"):
-		body.queue_free()
+		await get_tree().create_timer(0.1).timeout
+		queue_free()
 	else:
 		queue_free()

@@ -51,12 +51,10 @@ func Shot(delta):
 	#Odrzut 
 	if not AaGlobal.Player.is_on_floor():
 		var dystans = miejsce_spawnu_pocisku.global_position - AaGlobal.Player.srodek.global_position
-		print(dystans)
 		AaGlobal.Player.velocity += -(dystans) * 3
 	
 	if AaGlobal.Player.is_on_floor():
 		var dystans = miejsce_spawnu_pocisku.global_position - AaGlobal.Player.srodek.global_position
-		print(dystans)
 		AaGlobal.Player.velocity += Vector3(-dystans.x * 8, - dystans.y, - dystans.z * 8)
 
 	var bullet = bullet_path.instantiate()

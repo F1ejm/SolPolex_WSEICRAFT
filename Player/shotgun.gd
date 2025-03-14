@@ -44,13 +44,11 @@ func Shot():
 	# Odrzut
 	if not AaGlobal.Player.is_on_floor():
 		var dystans = miejsce_spawnu_pocisku.global_position - AaGlobal.Player.srodek.global_position
-		print(dystans)
-		AaGlobal.Player.velocity = -(dystans) * 10
+		AaGlobal.Player.velocity = Vector3(-dystans.x * 30, -dystans.y * 10, -dystans.z * 30)
 	if AaGlobal.Player.is_on_floor():
 		var dystans = miejsce_spawnu_pocisku.global_position - AaGlobal.Player.srodek.global_position
-		print(dystans)
 		AaGlobal.Player.velocity = Vector3(-dystans.x * 20, -dystans.y * 10, -dystans.z * 20)
-	
+	 
 	
 	var bullet = bullet_path.instantiate()
 	get_tree().current_scene.add_child(bullet) 
@@ -67,7 +65,6 @@ func Shot():
 		bullet2.dire = Vector3(randf_range(get_parent().global_rotation.x - 0.2, get_parent().global_rotation.x + 0.2),
 		randf_range(get_parent().global_rotation.y - 0.2, get_parent().global_rotation.y + 0.2),
 		randf_range(get_parent().global_rotation.z - 0.2, get_parent().global_rotation.z + 0.2))
-		print(bullet2.dire)
 		bullet2.global_position = miejsce_spawnu_pocisku.global_position
 		bullet2.obrazenia = obrazenia
 		bullet2.speed = speed
