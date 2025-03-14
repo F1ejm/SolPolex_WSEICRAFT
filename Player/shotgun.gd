@@ -44,7 +44,7 @@ func Shot():
 	
 	var bullet = bullet_path.instantiate()
 	get_tree().current_scene.add_child(bullet) 
-	bullet.dire = get_parent().global_rotation
+	bullet.dire = global_rotation
 	bullet.global_position = miejsce_spawnu_pocisku.global_position
 	bullet.global_transform.basis = miejsce_spawnu_pocisku.global_transform.basis
 	bullet.obrazenia = obrazenia
@@ -54,9 +54,9 @@ func Shot():
 		var bullet2 = bullet_path.instantiate()
 		get_tree().current_scene.add_child(bullet2) 
 		bullet2.global_transform.basis = miejsce_spawnu_pocisku.global_transform.basis
-		bullet2.dire = Vector3(randf_range(get_parent().global_rotation.x - 0.2, get_parent().global_rotation.x + 0.2),
-		randf_range(get_parent().global_rotation.y - 0.2, get_parent().global_rotation.y + 0.2),
-		randf_range(get_parent().global_rotation.z - 0.2, get_parent().global_rotation.z + 0.2))
+		bullet2.dire = Vector3(randf_range(global_rotation.x - 0.2, global_rotation.x + 0.2),
+		randf_range(global_rotation.y - 0.2, global_rotation.y + 0.2),
+		randf_range(global_rotation.z - 0.2, global_rotation.z + 0.2))
 		print(bullet2.dire)
 		bullet2.global_position = miejsce_spawnu_pocisku.global_position
 		bullet2.obrazenia = obrazenia
