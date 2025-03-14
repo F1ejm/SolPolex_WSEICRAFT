@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://16uyge0f8hj8"]
+
+[ext_resource type="ArrayMesh" uid="uid://hsufmlg3rax1" path="res://Assets/3D/tres_res_obj/glut_zielony.tres" id="1_lw1ee"]
+
+[sub_resource type="GDScript" id="GDScript_e85o3"]
+script/source = "extends CharacterBody3D
+
+
+const SPEED = 5.0
+const JUMP_VELOCITY = 4.5
+
+
+func _physics_process(delta: float) -> void:
+	# Add the gravity.
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+
+	# Handle jump.
+	if Input.is_action_just_pressed(\"ui_accept\") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+
+	# Get the input direction and handle the movement/deceleration.
+	# As good practice, you should replace UI actions with custom gameplay actions.
+	var input_dir := Input.get_vector(\"ui_left\", \"ui_right\", \"ui_up\", \"ui_down\")
+	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	if direction:
+		velocity.x = direction.x * SPEED
+		velocity.z = direction.z * SPEED
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.z = move_toward(velocity.z, 0, SPEED)
+
+	move_and_slide()
+"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lw1ee"]
+size = Vector3(1, 0.908173, 0.754448)
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+script = SubResource("GDScript_e85o3")
+
+[node name="SoftBody3D" type="SoftBody3D" parent="."]
+mesh = ExtResource("1_lw1ee")
+simulation_precision = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.274058, -0.0971794)
+shape = SubResource("BoxShape3D_lw1ee")

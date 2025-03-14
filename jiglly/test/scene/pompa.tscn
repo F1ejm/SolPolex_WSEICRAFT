@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bp7566qx8d0u7"]
+
+[ext_resource type="PackedScene" uid="uid://8sjiqxlv8xf0" path="res://Assets/3D/pompa.glb" id="1_qb2yt"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="pompa" parent="." instance=ExtResource("1_qb2yt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.530003, 0.561599, 0.940888)
