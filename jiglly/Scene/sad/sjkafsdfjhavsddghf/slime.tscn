@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1fmrc0hr2h8"]
+
+[ext_resource type="ArrayMesh" uid="uid://hsufmlg3rax1" path="res://Assets/3D/tres_res_obj/glut_zielony.tres" id="1_8vr1c"]
+[ext_resource type="Script" uid="uid://u547qeuks3gg" path="res://jiglly/Scene/sad/sjkafsdfjhavsddghf/slime.gd" id="1_cj23v"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_cj23v"]
+radius = 1.00436
+
+[node name="Slime" type="CharacterBody3D"]
+script = ExtResource("1_cj23v")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_cj23v")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_8vr1c")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
