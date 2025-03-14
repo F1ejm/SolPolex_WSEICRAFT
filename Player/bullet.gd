@@ -10,7 +10,7 @@ var rotate:bool = true
 
 var dire
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	
 	if start_timer == true:
 		timer -= delta

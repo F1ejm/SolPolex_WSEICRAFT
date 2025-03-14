@@ -31,8 +31,8 @@ func _process(delta: float) -> void:
 	
 	
 	if change_weapon == true:
-		
-		weapon.queue_free()
+		if weapon != null:
+			weapon.queue_free()
 		
 		if GlobalWeaponTimer.current_weapon == 1:
 			var shotgun = shotgun_path.instantiate()

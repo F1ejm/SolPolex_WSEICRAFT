@@ -21,6 +21,7 @@ var przegrzanie:bool = false
 
 func _process(delta: float) -> void:
 	szybkosc_strzalu -= delta
+	
 	$CSGBox3D/Miejsce_Spawnu_Pocisku.rotation = rotation
 	
 	if GlobalWeaponTimer.amunicja_lkm >= 30:
