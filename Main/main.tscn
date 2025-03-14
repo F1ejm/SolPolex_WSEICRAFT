@@ -1,6 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://3qwbw1ikqfcx"]
+[gd_scene load_steps=9 format=3 uid="uid://3qwbw1ikqfcx"]
 
 [ext_resource type="PackedScene" uid="uid://bihx6qd6hllbr" path="res://Player/Player.tscn" id="1_yh5la"]
+[ext_resource type="PackedScene" uid="uid://ba28u21brsj67" path="res://UI/Main Menu Etc/main_menu.tscn" id="2_eunhr"]
+[ext_resource type="PackedScene" uid="uid://1f411531vc5t" path="res://UI/Main Menu Etc/settings.tscn" id="3_k3v36"]
+[ext_resource type="PackedScene" uid="uid://oonygbl7t5sb" path="res://UI/Main Menu Etc/Pause_Menu.tscn" id="4_liyct"]
+[ext_resource type="PackedScene" uid="uid://bsnk0vv4jychs" path="res://UI/Player UI/reload.tscn" id="5_k3v36"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yh5la"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -31,3 +35,17 @@ size = Vector3(13.1624, 1, 10.54)
 
 [node name="Player" parent="." instance=ExtResource("1_yh5la")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.64654, 1.35222, 1.36462)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Reload" parent="CanvasLayer" instance=ExtResource("5_k3v36")]
+
+[node name="Main_Menu" parent="CanvasLayer" node_paths=PackedStringArray("settings") instance=ExtResource("2_eunhr")]
+settings = NodePath("../Settings")
+
+[node name="Settings" parent="CanvasLayer" node_paths=PackedStringArray("main_menu") instance=ExtResource("3_k3v36")]
+main_menu = NodePath("../Main_Menu")
+
+[node name="Pause_Menu" parent="CanvasLayer" node_paths=PackedStringArray("settings", "main_menu") instance=ExtResource("4_liyct")]
+settings = NodePath("../Settings")
+main_menu = NodePath("../Main_Menu")

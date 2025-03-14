@@ -1,15 +1,26 @@
-extends Node3D
+extends CharacterBody3D
 
 var obrazenia
+var speed
 
 var timer: float = 0.1
 var start_timer: bool = false
 
+var rotate:bool = true
+
+var dire
+
 func _process(delta: float) -> void:
+	
 	if start_timer == true:
 		timer -= delta
 	if timer <= 0:
 		queue_free()
+		
+	position += transform.basis * Vector3(0,0,-speed) * delta 
+	rotation = dire
+	
+	move_and_slide()
 
 
 func _on_timer_timeout() -> void:

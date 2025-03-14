@@ -8,6 +8,8 @@ var magazynek
 var szybkosc_przeladowania
 var obrazenia
 
+@export var ilosc_pociskow: int = 10
+
 func _ready() -> void:
 	szybkosc_strzalu = gun_stats.szybkosc_strzalu
 	speed = gun_stats.szybkosc_lotu
@@ -17,26 +19,46 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	szybkosc_strzalu -= delta
-	if Input.is_action_just_pressed("strzał") and szybkosc_strzalu <= 0 and magazynek > 0:
+	
+	$CSGBox3D/Miejsce_Spawnu_Pocisku.rotation = rotation
+	
+	if Input.is_action_just_pressed("strzał") and GlobalWeaponTimer.start_reload != true and magazynek > 0:
 		# Animacja Strzalu To do
-		szybkosc_strzalu = 1
 		magazynek -= 1
-		Shot()
-		
-	if Input.is_action_just_pressed("reload") and GlobalWeaponTimer.start_reload != true:
-		# Animacja Przeładowania To do
 		GlobalWeaponTimer.caly_reload = szybkosc_przeladowania
 		GlobalWeaponTimer.reload = szybkosc_przeladowania
-		GlobalWeaponTimer.start_reload
+		GlobalWeaponTimer.start_reload = true
+		Shot()
+		
 		
 	if GlobalWeaponTimer.reload <= 0:
 		magazynek = gun_stats.wielkosc_magazynku
-		GlobalWeaponTimer.reload = szybkosc_przeladowania
+		GlobalWeaponTimer.reload = 0
 		
-var bullet_path = preload("res://Player/bullet.tscn")
+var bullet_path = load("res://Player/bullet.tscn")
+
+@onready var miejsce_spawnu_pocisku: Node3D = $CSGBox3D/Miejsce_Spawnu_Pocisku
+
 
 func Shot():
+	
 	var bullet = bullet_path.instantiate()
-	bullet.position = $CSGBox3D/Miejsce_Spawnu_Pocisku.position
+	get_tree().current_scene.add_child(bullet) 
+	bullet.dire = global_rotation
+	bullet.global_position = miejsce_spawnu_pocisku.global_position
+	bullet.global_transform.basis = miejsce_spawnu_pocisku.global_transform.basis
 	bullet.obrazenia = obrazenia
-	bullet.velocity = speed
+	bullet.speed = speed
+	
+	for i in range(ilosc_pociskow):
+		var bullet2 = bullet_path.instantiate()
+		get_tree().current_scene.add_child(bullet2) 
+		bullet2.global_transform.basis = miejsce_spawnu_pocisku.global_transform.basis
+		bullet2.dire = Vector3(randf_range(global_rotation.x - 0.2, global_rotation.x + 0.2),
+		randf_range(global_rotation.y - 0.2, global_rotation.y + 0.2),
+		randf_range(global_rotation.z - 0.2, global_rotation.z + 0.2))
+		print(bullet2.dire)
+		bullet2.global_position = miejsce_spawnu_pocisku.global_position
+		bullet2.obrazenia = obrazenia
+		bullet2.speed = speed
+	
