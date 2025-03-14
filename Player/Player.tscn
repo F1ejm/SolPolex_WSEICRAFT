@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://bihx6qd6hllbr"]
+
+[ext_resource type="Script" uid="uid://dio4tecea53t5" path="res://Player/player.gd" id="1_3qydi"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_q3lat"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3qydi"]
+height = 1.65174
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_tok1r"]
+
+[node name="Player" type="CharacterBody3D" groups=["player"]]
+script = ExtResource("1_3qydi")
+
+[node name="normal_collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00726, 0)
+shape = SubResource("CapsuleShape3D_q3lat")
+
+[node name="crouching_collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.833567, 0)
+shape = SubResource("CapsuleShape3D_3qydi")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00726, 0)
+mesh = SubResource("CapsuleMesh_tok1r")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 0.95994, 0)
+
+[node name="head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
+
+[node name="Camera3D" type="Camera3D" parent="head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.126124)
+
+[node name="player range" type="RayCast3D" parent="head"]
+transform = Transform3D(1, 0, 0, 0, -7.43094e-08, -1, 0, 1.7, -4.37114e-08, 0, 0, -0.282795)
