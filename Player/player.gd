@@ -110,11 +110,15 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_pressed("sprint"):
 			current_speed = sprint_speed
 			
+			camera_3d.fov = move_toward(camera_3d.fov, 100, delta * 150)
+			
 			crouching = false
 			walking = false
 			sprinting = true
 		
 		else:
+			camera_3d.fov = move_toward(camera_3d.fov, 75, delta * 150)
+			
 			current_speed = walk_speed
 			crouching = false
 			walking = true
