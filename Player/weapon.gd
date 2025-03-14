@@ -7,11 +7,22 @@ var LKM_path = preload("res://Player/lkm.tscn")
 
 var change_weapon: bool = false
 
+var start_timer:bool = false
+var timer: float = 0.6
 
 func _process(delta: float) -> void:
 	
+	if start_timer == true:
+		timer -= delta
+		
+	if timer <= 0:
+		timer = 0.6
+		start_timer = false
+		GlobalWeaponTimer.timer = true
+	
 	if Input.is_action_just_pressed("bron_1"):
 		change_weapon = true
+		start_timer = true
 		GlobalWeaponTimer.current_weapon = 1
 		
 	if Input.is_action_just_pressed("bron_2"):
@@ -28,6 +39,7 @@ func _process(delta: float) -> void:
 			add_child(shotgun)
 			shotgun.global_position = global_position
 			weapon = shotgun
+			
 		
 		if GlobalWeaponTimer.current_weapon == 2:
 			var LKM = LKM_path.instantiate()
