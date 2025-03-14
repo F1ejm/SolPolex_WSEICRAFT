@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bsnk0vv4jychs"]
+[gd_scene load_steps=5 format=3 uid="uid://bsnk0vv4jychs"]
 
 [ext_resource type="Script" uid="uid://1uxi36vt1gj2" path="res://reload.gd" id="1_t8204"]
 [ext_resource type="Texture2D" uid="uid://bljtw0pyxuv03" path="res://Assets/2D/icon.svg" id="2_2bmd2"]
+[ext_resource type="Texture2D" uid="uid://dj8b8so6c2g44" path="res://Assets/2D/Shotgun_Placeholder.png" id="2_roenn"]
+[ext_resource type="Texture2D" uid="uid://by1o3dk1lyhmw" path="res://Assets/2D/LKM_Placeholder.png" id="3_2bmd2"]
 
 [node name="Reload" type="Control"]
 layout_mode = 3
@@ -11,6 +13,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_t8204")
+shotgun = ExtResource("2_roenn")
+LKM = ExtResource("3_2bmd2")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]
 modulate = Color(100, 100, 100, 1)
@@ -30,16 +34,29 @@ texture_progress = ExtResource("2_2bmd2")
 modulate = Color(100, 100, 100, 1)
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
+anchors_preset = 3
+anchor_left = 1.0
 anchor_top = 1.0
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -64.0
+offset_left = -128.0
 offset_top = -128.0
-offset_right = 64.0
-grow_horizontal = 2
+grow_horizontal = 0
 grow_vertical = 0
 step = 0.01
 fill_mode = 5
 texture_progress = ExtResource("2_2bmd2")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = -258.0
+offset_bottom = -130.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("3_2bmd2")

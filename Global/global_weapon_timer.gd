@@ -15,6 +15,8 @@ var ladowac_lkm: bool = true
 var timer_ladowanie: float = 0.6
 var timer: bool = false
 
+var Życie: int = 100
+
 func _process(delta: float):
 	if start_reload == true:
 		reload = reload - delta
