@@ -1,13 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://dkwfr74gifg4t"]
+[gd_scene load_steps=6 format=3 uid="uid://dkwfr74gifg4t"]
 
 [ext_resource type="Script" uid="uid://csnejrcekhj6a" path="res://Player/shotgun.gd" id="1_ygqtg"]
 [ext_resource type="Script" uid="uid://c8ssfdq608h0n" path="res://Player/Gun_Resource.gd" id="2_emoh0"]
+[ext_resource type="PackedScene" uid="uid://b5a3yppwdjbcm" path="res://Assets/3D/pompa2.glb" id="3_g50t5"]
+[ext_resource type="Script" uid="uid://ddfvyp2ixomyr" path="res://Assets/3D/pompa_2.gd" id="4_m6ei3"]
 
 [sub_resource type="Resource" id="Resource_emoh0"]
 script = ExtResource("2_emoh0")
 szybkosc_strzalu = 1.0
 recoil_do_gory = Vector3(0, 0, 0)
-recoil_do_tylu = Vector3(0, 0, 0)
 wielkosc_magazynku = 7
 szybkosc_przeladowania = 1.25
 szybkosc_lotu = 100
@@ -21,9 +22,14 @@ gun_stats = SubResource("Resource_emoh0")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(0.517665, 0, 0, 0, 0.408402, 0, 0, 0, 2.41428, 0, 0, 0)
+visible = false
 
 [node name="Miejsce_Spawnu_Pocisku" type="Node3D" parent="CSGBox3D"]
 transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 0.999999, 0, 0, -0.51888)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="CSGBox3D/Miejsce_Spawnu_Pocisku"]
 transform = Transform3D(0.38635, 0, 0, 0, 0.661114, 0, 0, 0, 0.414203, 0, 0, -0.147186)
+
+[node name="pompa2" parent="." instance=ExtResource("3_g50t5")]
+transform = Transform3D(-1.78124e-07, 0, 4.075, 0, 4.075, 0, -4.075, 0, -1.78124e-07, 0, 0, 0.404666)
+script = ExtResource("4_m6ei3")
