@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://deefig0pafbas"]
+
+[ext_resource type="Script" uid="uid://cwf11sfmv10v" path="res://spawner.gd" id="1_l64e7"]
+
+[node name="Spawner" type="Node3D"]
+script = ExtResource("1_l64e7")

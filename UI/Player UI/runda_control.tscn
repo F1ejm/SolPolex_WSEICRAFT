@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://1ceg6p38g2ya"]
+
+[ext_resource type="Script" uid="uid://c7qv5ad5ofr11" path="res://UI/Player UI/runda_control.gd" id="1_q2fuu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rbems"]
+font_size = 25
+font_color = Color(1, 1, 0, 1)
+
+[node name="Runda_Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_q2fuu")
+
+[node name="Czas_Rundy" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 23.0
+grow_horizontal = 0
+label_settings = SubResource("LabelSettings_rbems")
+
+[node name="Runda_Licznik" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -180.0
+offset_right = -140.0
+offset_bottom = 35.0
+grow_horizontal = 0
+label_settings = SubResource("LabelSettings_rbems")
