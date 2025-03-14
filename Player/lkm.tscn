@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://7fmfm18n2bnh"]
+[gd_scene load_steps=6 format=3 uid="uid://7fmfm18n2bnh"]
 
 [ext_resource type="Script" uid="uid://dwq045gc5smqh" path="res://Player/lkm.gd" id="1_vyu5r"]
 [ext_resource type="Script" uid="uid://c8ssfdq608h0n" path="res://Player/Gun_Resource.gd" id="2_6js81"]
+[ext_resource type="PackedScene" uid="uid://c156bc6234iqg" path="res://Assets/3D/lkm.glb" id="3_flm2t"]
+[ext_resource type="Script" uid="uid://yso54asey2ws" path="res://Assets/3D/lkm.gd" id="4_gdea7"]
 
 [sub_resource type="Resource" id="Resource_flm2t"]
 script = ExtResource("2_6js81")
@@ -19,9 +21,18 @@ gun_stats = SubResource("Resource_flm2t")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(0.517665, 0, 0, 0, 0.408402, 0, 0, 0, 2.41428, 0, 0, 0)
+visible = false
 
 [node name="Miejsce_Spawnu_Pocisku" type="Node3D" parent="CSGBox3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.512366)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="CSGBox3D/Miejsce_Spawnu_Pocisku"]
 transform = Transform3D(0.38635, 0, 0, 0, 0.661114, 0, 0, 0, 0.414203, 0, 0, -0.147186)
+
+[node name="lkm" parent="." instance=ExtResource("3_flm2t")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.0286379, 0, 0.27737)
+script = ExtResource("4_gdea7")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="lkm" method="_on_timer_timeout"]
