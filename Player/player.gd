@@ -29,12 +29,17 @@ var free_look_tilt_amount = 8
 
 var double_jump_controller: int = 1
 
+# wallrun
+@onready var ray_cast_lewo: RayCast3D = $neck/head/RayCast_lewo
+@onready var ray_cast_prawo: RayCast3D = $neck/head/RayCast_prawo
+
 #states
 var walking: bool = true
 var sprinting: bool = false
 var crouching: bool = false
 var sliding: bool = false
 var freelooking: bool = false
+var wallrunning: bool = false
 
 
 func _ready() -> void:
@@ -51,14 +56,18 @@ func _input(event: InputEvent) -> void:
 		head.rotation.x = clamp(head.rotation.x, deg_to_rad(-89), deg_to_rad(89))
 	
 func _physics_process(delta: float) -> void:
+	
 	# getting movement input
 	var input_dir := Input.get_vector("walk_left", "walk_right", "walk_forward", "walk_backwards")
 	
-	if not is_on_floor():
+	if not is_on_floor() and not wallrunning:
 		velocity += get_gravity() * delta
 
-	if is_on_floor():
+	if is_on_floor() or is_on_wall():
 		double_jump_controller = 1
+	
+
+
 	
 	if Input.is_action_just_pressed("jump"):
 		if is_on_floor():
@@ -111,11 +120,13 @@ func _physics_process(delta: float) -> void:
 	#Handle free looking || FREELOOK KURWO
 	if sliding == true: 
 		freelooking = true
-		camera_3d.rotation.z = move_toward(camera_3d.rotation.z, -deg_to_rad(7.0), delta)
+		if not wallrunning:
+			camera_3d.rotation.z = move_toward(camera_3d.rotation.z, -deg_to_rad(7.0), delta)
 	else:
 		freelooking = false
 		neck.rotation.y = move_toward(neck.rotation.y, 0.0, delta * 10)
-		camera_3d.rotation.z = move_toward(camera_3d.rotation.z,0.0, delta)
+		if not wallrunning:
+			camera_3d.rotation.z = move_toward(camera_3d.rotation.z,0.0, delta)
 	
 	
 	# handle sliding
@@ -143,4 +154,21 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, current_speed)
 		velocity.z = move_toward(velocity.z, 0, current_speed)
 
+	wall_run(delta)
+
 	move_and_slide()
+
+func wall_run(delta):
+	if sprinting and is_on_wall() and not is_on_floor():
+		wallrunning = true
+		velocity += get_gravity() * delta / 3
+		
+		if ray_cast_lewo.is_colliding():
+			camera_3d.rotation.z = move_toward(camera_3d.rotation.z, -deg_to_rad(15.0), delta * 2)
+			print("lewo")
+		elif ray_cast_prawo.is_colliding():
+			camera_3d.rotation.z = move_toward(camera_3d.rotation.z, -deg_to_rad(-15.0), delta * 2)
+			print("prawo")
+	else:
+		wallrunning = false
+		
