@@ -5,12 +5,12 @@
 
 [sub_resource type="Resource" id="Resource_flm2t"]
 script = ExtResource("2_6js81")
-szybkosc_strzalu = 0.1
+szybkosc_strzalu = 0.2
 recoil_do_gory = Vector3(0, 5, 0)
 recoil_do_tylu = Vector3(10, 20, 10)
 wielkosc_magazynku = 100
 szybkosc_przeladowania = 2.0
-szybkosc_lotu = 1200
+szybkosc_lotu = 125
 obrazenia = 10
 metadata/_custom_type_script = "uid://c8ssfdq608h0n"
 

@@ -8,7 +8,7 @@ var magazynek
 var szybkosc_przeladowania
 var obrazenia
 
-@export var ilosc_pociskow: int = 10
+@export var ilosc_pociskow: int = 20
 
 func _ready() -> void:
 	szybkosc_strzalu = gun_stats.szybkosc_strzalu
@@ -22,9 +22,9 @@ func _process(delta: float) -> void:
 	
 	$CSGBox3D/Miejsce_Spawnu_Pocisku.rotation = rotation
 	
-	if Input.is_action_just_pressed("strzał") and GlobalWeaponTimer.start_reload != true and magazynek > 0:
+	if Input.is_action_just_pressed("strzał") and GlobalWeaponTimer.start_reload != true :
 		# Animacja Strzalu To do
-		magazynek -= 1
+		
 		GlobalWeaponTimer.caly_reload = szybkosc_przeladowania
 		GlobalWeaponTimer.reload = szybkosc_przeladowania
 		GlobalWeaponTimer.start_reload = true
