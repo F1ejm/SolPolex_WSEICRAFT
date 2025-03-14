@@ -17,17 +17,29 @@ func _ready() -> void:
 	szybkosc_przeladowania = gun_stats.szybkosc_przeladowania
 	obrazenia = gun_stats.obrazenia
 
+var przegrzanie:bool = false
+
 func _process(delta: float) -> void:
 	szybkosc_strzalu -= delta
-	
 	$CSGBox3D/Miejsce_Spawnu_Pocisku.rotation = rotation
 	
-	if Input.is_action_pressed("strzał") and szybkosc_strzalu <= 0:
+	if GlobalWeaponTimer.amunicja_lkm >= 30:
+		przegrzanie = true
+	if GlobalWeaponTimer.amunicja_lkm <= 15:
+		przegrzanie = false
+	
+	if Input.is_action_pressed("strzał") and szybkosc_strzalu <= 0 and przegrzanie == false:
 		# Animacja Strzalu To do
+		GlobalWeaponTimer.timer = false
+		GlobalWeaponTimer.ladowac_lkm = false
+		GlobalWeaponTimer.timer_ladowanie = 0.3
 		szybkosc_strzalu = gun_stats.szybkosc_strzalu
-		print(szybkosc_strzalu)
+		GlobalWeaponTimer.amunicja_lkm += 1
 		Shot()
-
+		
+	if not Input.is_action_pressed("strzał") and szybkosc_strzalu <= 0 :
+		GlobalWeaponTimer.timer = true
+		
 		
 var bullet_path = load("res://Player/bullet.tscn")
 
