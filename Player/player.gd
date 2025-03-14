@@ -27,6 +27,8 @@ const crouch_depth = -0.5
 
 var free_look_tilt_amount = 8
 
+var double_jump_controller: int = 1
+
 #states
 var walking: bool = true
 var sprinting: bool = false
@@ -55,9 +57,18 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = jump_force
-		sliding = false
+	if is_on_floor():
+		double_jump_controller = 1
+	
+	if Input.is_action_just_pressed("jump"):
+		if is_on_floor():
+			velocity.y = jump_force
+			sliding = false
+		if not is_on_floor() and double_jump_controller == 1:
+			double_jump_controller = 0
+			velocity.y = jump_force
+			sliding = false
+
 
 # handle crouch
 	if Input.is_action_pressed("crouch") or sliding:
