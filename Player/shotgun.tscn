@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkwfr74gifg4t"]
+
+[ext_resource type="Script" uid="uid://csnejrcekhj6a" path="res://Player/shotgun.gd" id="1_ygqtg"]
+[ext_resource type="Script" uid="uid://c8ssfdq608h0n" path="res://Player/Gun_Resource.gd" id="2_emoh0"]
+
+[sub_resource type="Resource" id="Resource_emoh0"]
+script = ExtResource("2_emoh0")
+szybkosc_strzalu = 1.0
+recoil_do_gory = Vector3(0, 0, 0)
+recoil_do_tylu = Vector3(0, 0, 0)
+wielkosc_magazynku = 7
+szybkosc_przeladowania = 3.0
+szybkosc_lotu = 1000
+obrazenia = 20
+metadata/_custom_type_script = "uid://c8ssfdq608h0n"
+
+[node name="Shotgun" type="Node3D"]
+script = ExtResource("1_ygqtg")
+gun_stats = SubResource("Resource_emoh0")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(0.517665, 0, 0, 0, 0.408402, 0, 0, 0, 2.41428, 0, 0, 0)
+
+[node name="Miejsce_Spawnu_Pocisku" type="Node3D" parent="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.512366)
