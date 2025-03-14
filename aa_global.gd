@@ -9,7 +9,7 @@ func _process(delta):
 	
 	if Is_Playing == true:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	
+
 	if Is_Playing == false:
 		get_tree().paused = true
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)

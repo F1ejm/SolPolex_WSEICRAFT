@@ -9,12 +9,13 @@ szybkosc_strzalu = 1.0
 recoil_do_gory = Vector3(0, 0, 0)
 recoil_do_tylu = Vector3(0, 0, 0)
 wielkosc_magazynku = 7
-szybkosc_przeladowania = 3.0
-szybkosc_lotu = 1000
+szybkosc_przeladowania = 1.25
+szybkosc_lotu = 100
 obrazenia = 20
 metadata/_custom_type_script = "uid://c8ssfdq608h0n"
 
 [node name="Shotgun" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.623242, 0, 0, -0.278542)
 script = ExtResource("1_ygqtg")
 gun_stats = SubResource("Resource_emoh0")
 
@@ -22,4 +23,7 @@ gun_stats = SubResource("Resource_emoh0")
 transform = Transform3D(0.517665, 0, 0, 0, 0.408402, 0, 0, 0, 2.41428, 0, 0, 0)
 
 [node name="Miejsce_Spawnu_Pocisku" type="Node3D" parent="CSGBox3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.512366)
+transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 0.999999, 0, 0, -0.51888)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGBox3D/Miejsce_Spawnu_Pocisku"]
+transform = Transform3D(0.38635, 0, 0, 0, 0.661114, 0, 0, 0, 0.414203, 0, 0, -0.147186)
