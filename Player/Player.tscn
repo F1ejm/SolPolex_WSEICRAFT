@@ -27,11 +27,15 @@ mesh = SubResource("CapsuleMesh_tok1r")
 [node name="RayCast3D" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 0.95994, 0)
 
-[node name="head" type="Node3D" parent="."]
+[node name="neck" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
 
-[node name="Camera3D" type="Camera3D" parent="head"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.126124)
+[node name="head" type="Node3D" parent="neck"]
 
-[node name="player range" type="RayCast3D" parent="head"]
+[node name="Camera3D" type="Camera3D" parent="neck/head"]
+
+[node name="player range" type="RayCast3D" parent="neck/head"]
 transform = Transform3D(1, 0, 0, 0, -7.43094e-08, -1, 0, 1.7, -4.37114e-08, 0, 0, -0.282795)
+
+[node name="weapon" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.625372, 1.16854, -0.991883)
