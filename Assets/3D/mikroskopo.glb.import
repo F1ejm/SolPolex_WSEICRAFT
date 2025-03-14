@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ckhu3tv06ij5e"
-path="res://.godot/imported/pompa.glb-142632894d00618478b71d9f66431bd7.scn"
+uid="uid://pa4otptn1kd6"
+path="res://.godot/imported/mikroskopo.glb-f7ee893263cc05661d841f3cbaeb78ad.scn"
 
 [deps]
 
-source_file="res://Assets/3D/pompa.glb"
-dest_files=["res://.godot/imported/pompa.glb-142632894d00618478b71d9f66431bd7.scn"]
+source_file="res://Assets/3D/mikroskopo.glb"
+dest_files=["res://.godot/imported/mikroskopo.glb-f7ee893263cc05661d841f3cbaeb78ad.scn"]
 
 [params]
 

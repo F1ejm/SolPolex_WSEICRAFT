@@ -21,10 +21,17 @@ var current_speed = 5.0
 var slide_timer = 0.0
 var slide_timer_max = 1.0
 var slide_vector = Vector2.ZERO
+var slide_speed = 10.0
 
 const crouch_depth = -0.5
 
 var free_look_tilt_amount = 8
+
+var double_jump_controller: int = 1
+
+# wallrun
+@onready var ray_cast_lewo: RayCast3D = $neck/head/RayCast_lewo
+@onready var ray_cast_prawo: RayCast3D = $neck/head/RayCast_prawo
 
 #states
 var walking: bool = true
@@ -32,6 +39,7 @@ var sprinting: bool = false
 var crouching: bool = false
 var sliding: bool = false
 var freelooking: bool = false
+var wallrunning: bool = false
 
 
 func _ready() -> void:
@@ -40,22 +48,39 @@ func _ready() -> void:
 	
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
-		rotate_y(deg_to_rad(-event.relative.x * mouse_sens))
+		if freelooking:
+			neck.rotate_y(deg_to_rad(-event.relative.x * mouse_sens))
+		else:
+			rotate_y(deg_to_rad(-event.relative.x * mouse_sens))
 		head.rotate_x(deg_to_rad(-event.relative.y * mouse_sens))
 		head.rotation.x = clamp(head.rotation.x, deg_to_rad(-89), deg_to_rad(89))
 	
 func _physics_process(delta: float) -> void:
+	
 	# getting movement input
 	var input_dir := Input.get_vector("walk_left", "walk_right", "walk_forward", "walk_backwards")
 	
-	if not is_on_floor():
+	if not is_on_floor() and not wallrunning:
 		velocity += get_gravity() * delta
 
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = jump_force
+	if is_on_floor() or is_on_wall():
+		double_jump_controller = 1
+	
+
+
+	
+	if Input.is_action_just_pressed("jump"):
+		if is_on_floor():
+			velocity.y = jump_force
+			sliding = false
+		if not is_on_floor() and double_jump_controller == 1:
+			double_jump_controller = 0
+			velocity.y = jump_force
+			sliding = false
+
 
 # handle crouch
-	if Input.is_action_pressed("crouch"):
+	if Input.is_action_pressed("crouch") or sliding:
 		current_speed = crouch_speed
 		
 		head.position.y = move_toward(head.position.y, crouch_depth, delta * 3)
@@ -67,7 +92,6 @@ func _physics_process(delta: float) -> void:
 			sliding = true
 			slide_timer = slide_timer_max
 			slide_vector = input_dir
-			print("start")
 		
 		crouching = true
 		walking = false
@@ -93,14 +117,16 @@ func _physics_process(delta: float) -> void:
 			walking = true
 			sprinting = false
 			
-	#Handle free looking 
+	#Handle free looking || FREELOOK KURWO
 	if sliding == true: 
 		freelooking = true
-		camera_3d.rotation.z = deg_to_rad(neck.rotation.y * free_look_tilt_amount)
+		if not wallrunning:
+			camera_3d.rotation.z = move_toward(camera_3d.rotation.z, -deg_to_rad(7.0), delta)
 	else:
 		freelooking = false
-		neck.rotation.y = move_toward(neck.rotation.y, 0.0, delta)
-		camera_3d.rotation.z = move_toward(camera_3d.rotation.z,0.0, delta)
+		neck.rotation.y = move_toward(neck.rotation.y, 0.0, delta * 10)
+		if not wallrunning:
+			camera_3d.rotation.z = move_toward(camera_3d.rotation.z,0.0, delta)
 	
 	
 	# handle sliding
@@ -109,23 +135,40 @@ func _physics_process(delta: float) -> void:
 		slide_timer -= delta
 		if slide_timer <= 0:
 			sliding = false
-			print("end")
+			freelooking = false
 
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	
 	if sliding:
-		direction = (transform.basis * Vector3(slide_vector.x, 0, slide_vector.z)).normalized()
+		direction = (transform.basis * Vector3(slide_vector.x, 0, slide_vector.y)).normalized()
 	
 	if direction:
 		velocity.x = direction.x * current_speed
 		velocity.z = direction.z * current_speed
 		
 		if sliding:
-			velocity.x = direction.x * slide_timer
-			velocity.z = direction.z * slide_timer
+			velocity.x = direction.x * (slide_timer + 0.2) * slide_speed
+			velocity.z = direction.z * (slide_timer + 0.2) * slide_speed
 			
 	else:
 		velocity.x = move_toward(velocity.x, 0, current_speed)
 		velocity.z = move_toward(velocity.z, 0, current_speed)
 
+	wall_run(delta)
+
 	move_and_slide()
+
+func wall_run(delta):
+	if sprinting and is_on_wall() and not is_on_floor():
+		wallrunning = true
+		velocity += get_gravity() * delta / 3
+		
+		if ray_cast_lewo.is_colliding():
+			camera_3d.rotation.z = move_toward(camera_3d.rotation.z, -deg_to_rad(15.0), delta * 2)
+			print("lewo")
+		elif ray_cast_prawo.is_colliding():
+			camera_3d.rotation.z = move_toward(camera_3d.rotation.z, -deg_to_rad(-15.0), delta * 2)
+			print("prawo")
+	else:
+		wallrunning = false
+		

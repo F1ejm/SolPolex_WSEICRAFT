@@ -34,8 +34,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
 
 [node name="Camera3D" type="Camera3D" parent="neck/head"]
 
-[node name="player range" type="RayCast3D" parent="neck/head"]
-transform = Transform3D(1, 0, 0, 0, -7.43094e-08, -1, 0, 1.7, -4.37114e-08, 0, 0, -0.282795)
+[node name="RayCast_lewo" type="RayCast3D" parent="neck/head"]
+transform = Transform3D(-4.37114e-08, 0.4, 0, -1, -1.74846e-08, 0, 0, 0, 1, -0.5, -0.5, 0)
+
+[node name="RayCast_prawo" type="RayCast3D" parent="neck/head"]
+transform = Transform3D(-4.37114e-08, -0.4, 0, 1, -1.74846e-08, 0, 0, 0, 1, 0.5, -0.5, 0)
 
 [node name="weapon" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.625372, 1.16854, -0.991883)

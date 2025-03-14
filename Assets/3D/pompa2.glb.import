@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ckhu3tv06ij5e"
-path="res://.godot/imported/pompa.glb-142632894d00618478b71d9f66431bd7.scn"
+uid="uid://b5a3yppwdjbcm"
+path="res://.godot/imported/pompa2.glb-2c29ea0fdccf8c6c84345d95d1d8a560.scn"
 
 [deps]
 
-source_file="res://Assets/3D/pompa.glb"
-dest_files=["res://.godot/imported/pompa.glb-142632894d00618478b71d9f66431bd7.scn"]
+source_file="res://Assets/3D/pompa2.glb"
+dest_files=["res://.godot/imported/pompa2.glb-2c29ea0fdccf8c6c84345d95d1d8a560.scn"]
 
 [params]
 
