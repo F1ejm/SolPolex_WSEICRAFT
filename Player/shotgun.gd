@@ -66,6 +66,7 @@ func Shot():
 		randf_range(get_parent().global_rotation.y - 0.2, get_parent().global_rotation.y + 0.2),
 		randf_range(get_parent().global_rotation.z - 0.2, get_parent().global_rotation.z + 0.2))
 		bullet2.global_position = miejsce_spawnu_pocisku.global_position
+		bullet2.area_3d.monitoring = false
 		bullet2.obrazenia = obrazenia
 		bullet2.speed = speed
 	
