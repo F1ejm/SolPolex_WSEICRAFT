@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://bgvau7n1w1ogg"]
+
+[ext_resource type="ArrayMesh" uid="uid://n1qsblj0cmnx" path="res://Map_element/tree_2/mesh/pine1_Cone.res" id="1_3u65j"]
+[ext_resource type="ArrayMesh" uid="uid://bcm1evatn8now" path="res://Map_element/tree_2/mesh/pine1_Cone_001.res" id="2_rioti"]
+[ext_resource type="ArrayMesh" uid="uid://dr6io8n3iudvc" path="res://Map_element/tree_2/mesh/pine1_Cone_002.res" id="3_p5bgf"]
+[ext_resource type="ArrayMesh" uid="uid://dv53yw0tmskd1" path="res://Map_element/tree_2/mesh/pine1_Cylinder_001.res" id="4_ga13j"]
+
+[node name="StaticBody3D" type="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 4.00906, 0)
+mesh = ExtResource("1_3u65j")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 5.51172, 0)
+mesh = ExtResource("2_rioti")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 7.01014, 0)
+mesh = ExtResource("3_p5bgf")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+mesh = ExtResource("4_ga13j")

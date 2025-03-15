@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0onca810a8q"]
+
+[ext_resource type="ArrayMesh" uid="uid://tg18iw00xe0o" path="res://Map_element/tree/mesh/tree1_Cylinder_001.res" id="1_vyhym"]
+[ext_resource type="ArrayMesh" uid="uid://dbulmp1h06akd" path="res://Map_element/tree/mesh/tree1_Icosphere_002.res" id="2_01ueo"]
+
+[node name="StaticBody3D" type="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_vyhym")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.95987, 0)
+mesh = ExtResource("2_01ueo")

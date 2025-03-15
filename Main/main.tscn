@@ -1,11 +1,13 @@
-[gd_scene load_steps=16 format=3 uid="uid://3qwbw1ikqfcx"]
+[gd_scene load_steps=18 format=3 uid="uid://3qwbw1ikqfcx"]
 
 [ext_resource type="PackedScene" uid="uid://vne0g6db71bq" path="res://Map_element/barier+ground/static_body_3d.tscn" id="1_rj11h"]
 [ext_resource type="PackedScene" uid="uid://bihx6qd6hllbr" path="res://Player/Player.tscn" id="1_yh5la"]
 [ext_resource type="PackedScene" uid="uid://c1fmrc0hr2h8" path="res://jiglly/Scene/sad/sjkafsdfjhavsddghf/slime.tscn" id="2_2w1kt"]
 [ext_resource type="PackedScene" uid="uid://dx05x3e7qmsb8" path="res://Map_element/zamek/zamek.tscn" id="2_qac2q"]
+[ext_resource type="PackedScene" uid="uid://d0onca810a8q" path="res://Map_element/tree_2/tree_2.tscn" id="3_f3gf5"]
 [ext_resource type="PackedScene" uid="uid://ba28u21brsj67" path="res://UI/Main Menu Etc/main_menu.tscn" id="3_liyct"]
 [ext_resource type="PackedScene" uid="uid://oonygbl7t5sb" path="res://UI/Main Menu Etc/Pause_Menu.tscn" id="4_ib3t1"]
+[ext_resource type="PackedScene" uid="uid://bgvau7n1w1ogg" path="res://Map_element/tree/tree.tscn" id="4_rix8b"]
 [ext_resource type="PackedScene" uid="uid://1f411531vc5t" path="res://UI/Main Menu Etc/settings.tscn" id="5_f6fdm"]
 [ext_resource type="PackedScene" uid="uid://bsnk0vv4jychs" path="res://UI/Player UI/reload.tscn" id="6_rj11h"]
 [ext_resource type="PackedScene" uid="uid://1ceg6p38g2ya" path="res://UI/Player UI/runda_control.tscn" id="7_ib3t1"]
@@ -42,13 +44,49 @@ use_collision = true
 size = Vector3(158.886, 1, 130.896)
 material = SubResource("StandardMaterial3D_rj11h")
 
-[node name="world_barier" type="Node3D" parent="."]
+[node name="colision_on_object" type="Node3D" parent="."]
 
-[node name="StaticBody3D" parent="world_barier" instance=ExtResource("1_rj11h")]
+[node name="StaticBody3D" parent="colision_on_object" instance=ExtResource("1_rj11h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.26414, 0)
 
-[node name="StaticBody3D2" parent="world_barier" instance=ExtResource("2_qac2q")]
+[node name="StaticBody3D2" parent="colision_on_object" instance=ExtResource("2_qac2q")]
 transform = Transform3D(0.68, 0, 0, 0, 0.68, 0, 0, 0, 0.68, 0, 0.177241, 8.87063)
+
+[node name="StaticBody3D3" parent="colision_on_object" instance=ExtResource("3_f3gf5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.09901, 0, -28.5558)
+
+[node name="StaticBody3D7" parent="colision_on_object" instance=ExtResource("3_f3gf5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.6714, 0, -17.107)
+
+[node name="StaticBody3D8" parent="colision_on_object" instance=ExtResource("3_f3gf5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.1551, 0, 15.321)
+
+[node name="StaticBody3D9" parent="colision_on_object" instance=ExtResource("3_f3gf5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.1556, 0, -7.05807)
+
+[node name="StaticBody3D10" parent="colision_on_object" instance=ExtResource("3_f3gf5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.609, 0, -30.5656)
+
+[node name="StaticBody3D11" parent="colision_on_object" instance=ExtResource("3_f3gf5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.1333, 0, 28.8595)
+
+[node name="StaticBody3D14" parent="colision_on_object" instance=ExtResource("3_f3gf5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.6903, 0, 20.249)
+
+[node name="StaticBody3D4" parent="colision_on_object" instance=ExtResource("4_rix8b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.4098, 0, 4.63762)
+
+[node name="StaticBody3D6" parent="colision_on_object" instance=ExtResource("4_rix8b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.469, 0, -27.2274)
+
+[node name="StaticBody3D5" parent="colision_on_object" instance=ExtResource("4_rix8b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.22172, 0, 23.4186)
+
+[node name="StaticBody3D12" parent="colision_on_object" instance=ExtResource("4_rix8b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.4729, 0, 8.52719)
+
+[node name="StaticBody3D13" parent="colision_on_object" instance=ExtResource("4_rix8b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.014, 0, -14.4326)
 
 [node name="enviroment" type="Node3D" parent="."]
 

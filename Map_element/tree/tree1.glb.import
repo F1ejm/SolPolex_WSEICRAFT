@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bkt6vk7wx8s1q"
-path="res://.godot/imported/zamek.glb-6e542da79e41e92d0eb49c3a95b6ce34.scn"
+uid="uid://b0i1n3d3y7wf3"
+path="res://.godot/imported/tree1.glb-dbf1dbefafb78536303db16df680cdbf.scn"
 
 [deps]
 
-source_file="res://Map_element/zamek/zamek.glb"
-dest_files=["res://.godot/imported/zamek.glb-6e542da79e41e92d0eb49c3a95b6ce34.scn"]
+source_file="res://Map_element/tree/tree1.glb"
+dest_files=["res://.godot/imported/tree1.glb-dbf1dbefafb78536303db16df680cdbf.scn"]
 
 [params]
 
@@ -34,13 +34,21 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "meshes": {
-"zamek_Cube_412": {
+"tree1_Cylinder_001": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
 "save_to_file/enabled": true,
-"save_to_file/path": "res://Map_element/zamek/mesh/zamek_Cube_412.res"
+"save_to_file/path": "res://Map_element/tree/mesh/tree1_Cylinder_001.res"
+},
+"tree1_Icosphere_002": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Map_element/tree/mesh/tree1_Icosphere_002.res"
 }
 }
 }
