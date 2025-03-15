@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dyyflk5carbxo"
-path="res://.godot/imported/zamek.glb-6e542da79e41e92d0eb49c3a95b6ce34.scn"
+uid="uid://b41ec1kibipeg"
+path="res://.godot/imported/monolit.glb-2f2e7fb904818fbd976038483c2015ee.scn"
 
 [deps]
 
-source_file="res://Map_element/zamek/zamek.glb"
-dest_files=["res://.godot/imported/zamek.glb-6e542da79e41e92d0eb49c3a95b6ce34.scn"]
+source_file="res://Assets/3D/monolit.glb"
+dest_files=["res://.godot/imported/monolit.glb-2f2e7fb904818fbd976038483c2015ee.scn"]
 
 [params]
 
@@ -32,17 +32,6 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={
-"meshes": {
-"zamek_Cube_412": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": true,
-"save_to_file/path": "res://Map_element/zamek/mesh/zamek_Cube_412.res"
-}
-}
-}
+_subresources={}
 gltf/naming_version=1
 gltf/embedded_image_handling=1
