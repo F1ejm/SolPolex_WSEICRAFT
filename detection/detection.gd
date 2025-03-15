@@ -27,6 +27,7 @@ func _process(delta: float) -> void:
 				$Timer.start()
 				hp-=40
 				if hp <= 0 :
+					$"../AudioStreamPlayer3D".play()
 					$"../Srodek/CPUParticles3D2".emitting = true
 					start_timer = true
 					GlobalWeaponTimer.score += randi_range(1,3)
@@ -39,6 +40,7 @@ func _process(delta: float) -> void:
 				$Timer.start()
 				hp-=40
 				if hp <= 0 :
+					$"../AudioStreamPlayer3D".play()
 					$"../Srodek/CPUParticles3D2".emitting = true
 					start_timer = true
 					GlobalWeaponTimer.score += randi_range(1,3)
@@ -50,6 +52,7 @@ func _process(delta: float) -> void:
 				$Timer.start()
 				hp-=40
 				if hp <= 0 :
+					$"../AudioStreamPlayer3D".play()
 					$"../Srodek/CPUParticles3D2".emitting = true
 					start_timer = true
 					GlobalWeaponTimer.score += randi_range(1,3)
@@ -61,6 +64,7 @@ func _process(delta: float) -> void:
 				$Timer.start()
 				hp-=40
 				if hp <= 0 :
+					$"../AudioStreamPlayer3D".play()
 					$"../Srodek/CPUParticles3D2".emitting = true
 					start_timer = true
 					GlobalWeaponTimer.score += randi_range(1,3)

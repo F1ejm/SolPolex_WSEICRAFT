@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://c1fmrc0hr2h8"]
+[gd_scene load_steps=12 format=3 uid="uid://c1fmrc0hr2h8"]
 
 [ext_resource type="ArrayMesh" uid="uid://hsufmlg3rax1" path="res://Assets/3D/tres_res_obj/glut_zielony.tres" id="1_8vr1c"]
 [ext_resource type="Script" uid="uid://u547qeuks3gg" path="res://jiglly/Scene/sad/sjkafsdfjhavsddghf/slime.gd" id="1_cj23v"]
 [ext_resource type="PackedScene" uid="uid://cqoftflownyn4" path="res://detection/detection.tscn" id="3_vo40d"]
+[ext_resource type="AudioStream" uid="uid://ixfw782uo6g7" path="res://Assets/3D/slime-squish-2-218566.mp3" id="4_53k2d"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_cj23v"]
 radius = 0.8
@@ -79,6 +80,10 @@ initial_velocity_min = 16.4
 initial_velocity_max = 24.59
 scale_amount_curve = SubResource("Curve_vo40d")
 color = Color(1, 0, 0, 1)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_53k2d")
+volume_db = 15.0
 
 [connection signal="area_exited" from="Area3D" to="." method="_on_area_3d_area_exited"]
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
