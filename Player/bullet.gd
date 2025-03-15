@@ -6,6 +6,8 @@ var speed
 var timer: float = 0.1
 var start_timer: bool = false
 
+@onready var area_3d: Area3D = $Area3D
+
 var rotate:bool = true
 
 var dire
@@ -27,12 +29,11 @@ func _on_timer_timeout() -> void:
 	queue_free()
 
 
-func _on_area_3d_body_entered(body: Node3D) -> void:
-	if body.is_in_group("Odbijajace"):
-		body.velocity = -(body.velocity)
+func _on_area_3d_area_entered(area: Area3D) -> void:
+
+	if area.get_parent().is_in_group("Enemy"):
+		var dystans = position - area.get_parent().srodek.position
+		area.get_parent().velocity = dystans * 7 * Vector3(-1.2,1,1)
 		
-	if body.is_in_group("Enemy"):
-		await get_tree().create_timer(0.1).timeout
 		queue_free()
-	else:
-		queue_free()
+		
