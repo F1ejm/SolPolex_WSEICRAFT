@@ -15,6 +15,7 @@ func _process(delta):
 	
 	if Is_Playing == true:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		Input.action_press("bron_1")
 
 	if Is_Playing == false:
 		get_tree().paused = true
