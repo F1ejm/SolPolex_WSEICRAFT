@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://3qwbw1ikqfcx"]
+[gd_scene load_steps=25 format=3 uid="uid://3qwbw1ikqfcx"]
 
 [ext_resource type="PackedScene" uid="uid://vne0g6db71bq" path="res://Map_element/barier+ground/static_body_3d.tscn" id="1_rj11h"]
 [ext_resource type="PackedScene" uid="uid://bihx6qd6hllbr" path="res://Player/Player.tscn" id="1_yh5la"]
@@ -17,6 +17,8 @@
 [ext_resource type="PackedScene" uid="uid://bm1xl5l5ari26" path="res://Map_element/hwaławielkimuksinpizingowi.glb" id="14_uhr2j"]
 [ext_resource type="PackedScene" uid="uid://b41ec1kibipeg" path="res://Map_element/monolit.glb" id="16_guo5i"]
 [ext_resource type="PackedScene" uid="uid://dtp1gma2db2um" path="res://Assets/3D/bush.glb" id="17_guo5i"]
+[ext_resource type="PackedScene" uid="uid://ddppp4u8hup4i" path="res://Assets/3D/envoirment/scieszka.glb" id="18_0gq1e"]
+[ext_resource type="PackedScene" uid="uid://da5yjsfqg5d55" path="res://Assets/3D/envoirment/trawa kępka.glb" id="19_wbdht"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_qvhan"]
 vertices = PackedVector3Array(-78.9429, 1, -64.9481, -78.9429, 1, 65.0519, 79.0571, 1, 65.0519, 79.0571, 1, -64.9481)
@@ -105,10 +107,10 @@ transform = Transform3D(-0.319373, 0, -0.947629, 0, 1, 0, 0.947629, 0, -0.319373
 transform = Transform3D(-0.319373, 0, -0.947629, 0, 1, 0, 0.947629, 0, -0.319373, -24.1033, 0.49227, 1.62411)
 
 [node name="kwiatuszek13" parent="random_item" instance=ExtResource("2_l5bfp")]
-transform = Transform3D(-0.319373, 0, -0.947629, 0, 1, 0, 0.947629, 0, -0.319373, -33.4362, 0.904825, 17.989)
+transform = Transform3D(-0.319373, 0, -0.947629, 0, 1, 0, 0.947629, 0, -0.319373, -33.4362, 0.537488, 17.989)
 
 [node name="kwiatuszek14" parent="random_item" instance=ExtResource("2_l5bfp")]
-transform = Transform3D(-0.319373, 0, -0.947629, 0, 1, 0, 0.947629, 0, -0.319373, -14.0843, 0.904825, 11.899)
+transform = Transform3D(-0.319373, 0, -0.947629, 0, 1, 0, 0.947629, 0, -0.319373, -14.0843, 0.51288, 11.899)
 
 [node name="kwiatuszek15" parent="random_item" instance=ExtResource("2_l5bfp")]
 transform = Transform3D(-0.319373, 0, -0.947629, 0, 1, 0, 0.947629, 0, -0.319373, -9.03312, 0.904825, 27.9379)
@@ -248,3 +250,114 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.230767, 37)
 
 [node name="bush3" parent="." instance=ExtResource("17_guo5i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.6122, 0.287455, 42.6337)
+
+[node name="scieszka" parent="." instance=ExtResource("18_0gq1e")]
+transform = Transform3D(45.96, 0, 0, 0, 45.96, 0, 0, 0, 45.96, 14.3094, 0.492197, 0)
+
+[node name="scieszka2" parent="." instance=ExtResource("18_0gq1e")]
+transform = Transform3D(45.96, 0, 0, 0, 45.96, 0, 0, 0, 45.96, 14.3094, 0.492197, -2.7871)
+
+[node name="scieszka3" parent="." instance=ExtResource("18_0gq1e")]
+transform = Transform3D(-45.5694, 0, -5.9791, 0, 45.96, 0, 5.9791, 0, -45.5694, 5.55264, 0.492197, 2.2318)
+
+[node name="scieszka4" parent="." instance=ExtResource("18_0gq1e")]
+transform = Transform3D(45.118, 0, 8.75698, 0, 45.96, 0, -8.75698, 0, 45.118, 3.32275, 0.492197, -2.73417)
+
+[node name="scieszka10" parent="." instance=ExtResource("18_0gq1e")]
+transform = Transform3D(24.4027, 0, -38.9465, 0, 45.96, 0, 38.9465, 0, 24.4027, 14.6142, 0.492197, 9.9401)
+
+[node name="scieszka6" parent="." instance=ExtResource("18_0gq1e")]
+transform = Transform3D(45.6999, 0, 4.8823, 0, 45.96, 0, -4.8823, 0, 45.6999, 14.0191, 0.492197, 3.28391)
+
+[node name="scieszka7" parent="." instance=ExtResource("18_0gq1e")]
+transform = Transform3D(36.4347, 0, 28.0149, 0, 45.96, 0, -28.0149, 0, 36.4347, 19.1217, 0.492197, -7.47334)
+
+[node name="scieszka5" parent="." instance=ExtResource("18_0gq1e")]
+transform = Transform3D(9.31382, 0, 45.0064, 0, 45.96, 0, -45.0064, 0, 9.31382, 6.34835, 0.492197, -9.06822)
+
+[node name="scieszka8" parent="." instance=ExtResource("18_0gq1e")]
+transform = Transform3D(33.1577, 0, 31.8259, 0, 45.96, 0, -31.8259, 0, 33.1577, 24.3562, 0.492197, -4.32249)
+
+[node name="scieszka9" parent="." instance=ExtResource("18_0gq1e")]
+transform = Transform3D(33.1577, 0, 31.8259, 0, 45.96, 0, -31.8259, 0, 33.1577, 22.5527, 0.492197, -6.48891)
+
+[node name="trawa kępka" parent="." instance=ExtResource("19_wbdht")]
+transform = Transform3D(8.285, 0, 0, 0, 8.285, 0, 0, 0, 8.285, -12.1593, 0.51837, 0)
+
+[node name="trawa kępka2" parent="." instance=ExtResource("19_wbdht")]
+transform = Transform3D(8.285, 0, 0, 0, 8.285, 0, 0, 0, 8.285, -24.4534, 0.51837, -10.281)
+
+[node name="trawa kępka3" parent="." instance=ExtResource("19_wbdht")]
+transform = Transform3D(8.285, 0, 0, 0, 8.285, 0, 0, 0, 8.285, -19.3745, 0.51837, 20.1822)
+
+[node name="trawa kępka4" parent="." instance=ExtResource("19_wbdht")]
+transform = Transform3D(8.285, 0, 0, 0, 8.285, 0, 0, 0, 8.285, -19.3745, 0.51837, -1.70379)
+
+[node name="trawa kępka5" parent="." instance=ExtResource("19_wbdht")]
+transform = Transform3D(8.285, 0, 0, 0, 8.285, 0, 0, 0, 8.285, -19.3745, 0.51837, -18.7345)
+
+[node name="trawa kępka6" parent="." instance=ExtResource("19_wbdht")]
+transform = Transform3D(8.285, 0, 0, 0, 8.285, 0, 0, 0, 8.285, -10.7359, 0.51837, -18.7345)
+
+[node name="trawa kępka7" parent="." instance=ExtResource("19_wbdht")]
+transform = Transform3D(8.285, 0, 0, 0, 8.285, 0, 0, 0, 8.285, -0.254111, 0.51837, -26.6098)
+
+[node name="trawa kępka8" parent="." instance=ExtResource("19_wbdht")]
+transform = Transform3D(8.285, 0, 0, 0, 8.285, 0, 0, 0, 8.285, 11.4189, 0.51837, -19.89)
+
+[node name="trawa kępka9" parent="." instance=ExtResource("19_wbdht")]
+transform = Transform3D(8.285, 0, 0, 0, 8.285, 0, 0, 0, 8.285, 22.2403, 0.51837, -36.1716)
+
+[node name="trawa kępka10" parent="." instance=ExtResource("19_wbdht")]
+transform = Transform3D(8.285, 0, 0, 0, 8.285, 0, 0, 0, 8.285, 22.2403, 0.51837, -28.0746)
+
+[node name="trawa kępka11" parent="." instance=ExtResource("19_wbdht")]
+transform = Transform3D(8.285, 0, 0, 0, 8.285, 0, 0, 0, 8.285, 33.7317, 0.51837, -12.9376)
+
+[node name="trawa kępka13" parent="." instance=ExtResource("19_wbdht")]
+transform = Transform3D(8.285, 0, 0, 0, 8.285, 0, 0, 0, 8.285, 44.9233, 0.51837, -5.59662)
+
+[node name="trawa kępka14" parent="." instance=ExtResource("19_wbdht")]
+transform = Transform3D(8.285, 0, 0, 0, 8.285, 0, 0, 0, 8.285, 33.4725, 0.51837, -1.21994)
+
+[node name="trawa kępka15" parent="." instance=ExtResource("19_wbdht")]
+transform = Transform3D(8.285, 0, 0, 0, 8.285, 0, 0, 0, 8.285, 38.6068, 0.51837, 9.65673)
+
+[node name="trawa kępka16" parent="." instance=ExtResource("19_wbdht")]
+transform = Transform3D(8.285, 0, 0, 0, 8.285, 0, 0, 0, 8.285, 47.8369, 0.51837, 21.0655)
+
+[node name="trawa kępka17" parent="." instance=ExtResource("19_wbdht")]
+transform = Transform3D(8.24237, 0.839409, 0, -0.839409, 8.24237, 0, 0, 0, 8.285, 40.6271, 0.51837, 26.9044)
+
+[node name="trawa kępka18" parent="." instance=ExtResource("19_wbdht")]
+transform = Transform3D(8.24237, 0.839409, 0, -0.839409, 8.24237, 0, 0, 0, 8.285, 28.4778, 0.51837, 26.9044)
+
+[node name="trawa kępka19" parent="." instance=ExtResource("19_wbdht")]
+transform = Transform3D(8.24237, 0.839409, 0, -0.839409, 8.24237, 0, 0, 0, 8.285, 10.4838, 0.51837, 26.9044)
+
+[node name="trawa kępka20" parent="." instance=ExtResource("19_wbdht")]
+transform = Transform3D(8.24237, 0.839409, 0, -0.839409, 8.24237, 0, 0, 0, 8.285, 10.4838, 0.51837, 17.5108)
+
+[node name="trawa kępka21" parent="." instance=ExtResource("19_wbdht")]
+transform = Transform3D(8.24237, 0.839409, 0, -0.839409, 8.24237, 0, 0, 0, 8.285, -10.4602, 0.51837, 17.5108)
+
+[node name="trawa kępka23" parent="." instance=ExtResource("19_wbdht")]
+transform = Transform3D(8.24237, 0.839409, 0, -0.839409, 8.24237, 0, 0, 0, 8.285, -2.2076, 0.51837, 9.29923)
+
+[node name="trawa kępka24" parent="." instance=ExtResource("19_wbdht")]
+transform = Transform3D(8.24237, 0.839409, 0, -0.839409, 8.24237, 0, 0, 0, 8.285, -4.90163, 0.51837, 4.14022)
+
+[node name="trawa kępka25" parent="." instance=ExtResource("19_wbdht")]
+transform = Transform3D(8.24237, 0.839409, 0, -0.839409, 8.24237, 0, 0, 0, 8.285, -4.90163, 0.51837, -7.37436)
+
+[node name="trawa kępka26" parent="." instance=ExtResource("19_wbdht")]
+transform = Transform3D(8.24237, 0.839409, 0, -0.839409, 8.24237, 0, 0, 0, 8.285, 2.4496, 0.51837, -7.85701)
+
+[node name="trawa kępka27" parent="." instance=ExtResource("19_wbdht")]
+transform = Transform3D(8.24237, 0.839409, 0, -0.839409, 8.24237, 0, 0, 0, 8.285, 16.1545, 0.51837, -7.85701)
+
+[node name="trawa kępka22" parent="." instance=ExtResource("19_wbdht")]
+transform = Transform3D(8.24237, 0.839409, 0, -0.839409, 8.24237, 0, 0, 0, 8.285, -27.6457, 0.51837, 20.8456)
+
+[node name="trawa kępka12" parent="." instance=ExtResource("19_wbdht")]
+transform = Transform3D(8.285, 0, 0, 0, 8.285, 0, 0, 0, 8.285, 26.5116, 0.51837, -20.4418)
