@@ -17,6 +17,15 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_pkn2l")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_pga83")
+
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -61,12 +70,6 @@ text = "INSTRUCTION
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Quit"
-
-[node name="MainScreen" type="Sprite2D" parent="."]
-z_index = -1
-position = Vector2(557.019, 323.5)
-scale = Vector2(0.750569, 0.75057)
-texture = ExtResource("2_pga83")
 
 [node name="Control" parent="." instance=ExtResource("3_fom4i")]
 visible = false
