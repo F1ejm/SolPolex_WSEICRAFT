@@ -13,3 +13,7 @@ func _process(delta: float) -> void:
 	if czas_rundy <= 0:
 		czas_rundy = 60
 		round_playing = false
+		GlobalWeaponTimer.Życie = 100
+		var x = get_tree().get_nodes_in_group("Enemy")
+		for i in range(len(x)):
+			x[i].queue_free()
