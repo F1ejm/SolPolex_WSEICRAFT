@@ -40,8 +40,6 @@ func _process(delta: float) -> void:
 			print("ads")
 	else:
 		pass
-	
-
 
 func _on_timer_timeout() -> void:
 	can_colide = true
