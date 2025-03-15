@@ -4,7 +4,9 @@ extends Control
 
 
 func _ready():
-	visible = false
+	visible = true
+	process_mode = Node.PROCESS_MODE_ALWAYS
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 
 func _on_play_pressed():

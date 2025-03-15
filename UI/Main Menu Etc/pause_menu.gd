@@ -5,6 +5,7 @@ extends Control
 
 
 func _ready():
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	visible = false
 
 func _process(delta):
@@ -31,3 +32,4 @@ func _on_settings_pressed():
 func _on_main_menu_pressed():
 	visible = false
 	main_menu.visible = true
+	AaGlobal.Is_Playing = false

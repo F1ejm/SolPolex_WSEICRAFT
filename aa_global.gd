@@ -4,8 +4,12 @@ var Is_Playing: bool
 
 var Player: CharacterBody3D
 
+@onready var reload: Control = $CanvasLayer/Reload
+@onready var runda_control: Control = $CanvasLayer/Runda_Control
+
+
 func _ready():
-	Is_Playing = true
+	Is_Playing = false
 
 func _process(delta):
 	

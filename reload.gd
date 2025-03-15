@@ -8,6 +8,12 @@ extends Control
 @export var LKM : Texture2D
 
 func _process(delta: float) -> void:
+	process_mode = Node.PROCESS_MODE_ALWAYS
+	if AaGlobal.Is_Playing == true:
+		visible = true
+	else:
+		visible = false
+	
 	texture_progress_bar.max_value = GlobalWeaponTimer.caly_reload
 	texture_progress_bar.value = GlobalWeaponTimer.reload
 	

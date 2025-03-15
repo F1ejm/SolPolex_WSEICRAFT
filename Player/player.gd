@@ -45,11 +45,14 @@ var freelooking: bool = false
 var wallrunning: bool = false
 
 
-func _ready() -> void:
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	
+func _process(delta: float) -> void:
+	if $"../CanvasLayer/Main_Menu".visible == false:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	else:
+		AaGlobal.Is_Playing = false
 	
 func _input(event: InputEvent) -> void:
+		
 	if event is InputEventMouseMotion:
 		if freelooking:
 			neck.rotate_y(deg_to_rad(-event.relative.x * mouse_sens))
