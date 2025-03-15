@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://ba28u21brsj67"]
+[gd_scene load_steps=5 format=3 uid="uid://ba28u21brsj67"]
 
 [ext_resource type="Script" uid="uid://cu5fdhtfqcpre" path="res://UI/Main Menu Etc/main_menu.gd" id="1_pkn2l"]
 [ext_resource type="Texture2D" uid="uid://dkbkahfsaaynt" path="res://Assets/2D/main_screen.jpg" id="2_pga83"]
+[ext_resource type="PackedScene" uid="uid://drldidi36sesp" path="res://UI/Main Menu Etc/instruction.tscn" id="3_fom4i"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_pkn2l"]
 font_size = 80
@@ -66,6 +67,10 @@ z_index = -1
 position = Vector2(557.019, 323.5)
 scale = Vector2(0.750569, 0.75057)
 texture = ExtResource("2_pga83")
+
+[node name="Control" parent="." instance=ExtResource("3_fom4i")]
+visible = false
+layout_mode = 1
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

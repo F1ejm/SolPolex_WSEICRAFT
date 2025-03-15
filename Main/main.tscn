@@ -35,6 +35,18 @@ tonemap_mode = 2
 
 [node name="Main" type="Node3D"]
 
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0152934, 3.41203, -8.18024)
+text = "\"W\",\"S\",\"A\",\"D\" - to move around
+\"Left_Click\" - to shoot
+\"1\",\"2\" - to change weapons
+\"C\" - crouch/slide
+\"Shift\" - sprint
+\"Enter\" - start round
+Sprint Jump Into Walls To Slide On Them"
+font_size = 50
+horizontal_alignment = 0
+
 [node name="world" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_qvhan")
 
