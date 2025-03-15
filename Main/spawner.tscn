@@ -1,6 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://deefig0pafbas"]
+[gd_scene load_steps=3 format=3 uid="uid://deefig0pafbas"]
 
 [ext_resource type="Script" uid="uid://cwf11sfmv10v" path="res://spawner.gd" id="1_l64e7"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_julng"]
+
 [node name="Spawner" type="Node3D"]
 script = ExtResource("1_l64e7")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1.47818, 0, 0, 0, 0.95984, 0, 0, 0, 1.82474, 0, 0, 0)
+shape = SubResource("BoxShape3D_julng")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
