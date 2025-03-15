@@ -19,53 +19,54 @@ func _process(delta: float) -> void:
 	if timer >= 0.5:
 		$"..".queue_free()
 	
-	if ray_1.is_colliding() == true:
-		if can_colide == true:
-			can_colide = false
-			$Timer.start()
-			hp-=40
-			if hp <= 0 :
-				$"../Srodek/CPUParticles3D2".emitting = true
-				start_timer = true
-				GlobalWeaponTimer.score += randi_range(1,3)
-				
-	else:
-		pass
-	if ray_2.is_colliding() == true:
-		if can_colide == true:
-			can_colide = false
-			$Timer.start()
-			hp-=40
-			print(hp)
-			if hp <= 0 :
-				$"../Srodek/CPUParticles3D2".emitting = true
-				start_timer = true
-				GlobalWeaponTimer.score += randi_range(1,3)
-	else:
-		pass
-	if ray_3.is_colliding() == true:
-		if can_colide == true:
-			can_colide = false
-			$Timer.start()
-			hp-=40
-			if hp <= 0 :
-				$"../Srodek/CPUParticles3D2".emitting = true
-				start_timer = true
-				GlobalWeaponTimer.score += randi_range(1,3)
-	else:
-		pass
-	if ray_4.is_colliding() == true:
-		if can_colide == true:
-			can_colide = false
-			$Timer.start()
-			hp-=40
-			if hp <= 0 :
-				$"../Srodek/CPUParticles3D2".emitting = true
-				start_timer = true
-				GlobalWeaponTimer.score += randi_range(1,3)
-				
-	else:
-		pass
+	if get_parent().velocity.x > 4 or get_parent().velocity.y > 4 or get_parent().velocity.z > 4:
+	
+		if ray_1.is_colliding() == true:
+			if can_colide == true:
+				can_colide = false
+				$Timer.start()
+				hp-=40
+				if hp <= 0 :
+					$"../Srodek/CPUParticles3D2".emitting = true
+					start_timer = true
+					GlobalWeaponTimer.score += randi_range(1,3)
+					
+		else:
+			pass
+		if ray_2.is_colliding() == true:
+			if can_colide == true:
+				can_colide = false
+				$Timer.start()
+				hp-=40
+				if hp <= 0 :
+					$"../Srodek/CPUParticles3D2".emitting = true
+					start_timer = true
+					GlobalWeaponTimer.score += randi_range(1,3)
+		else:
+			pass
+		if ray_3.is_colliding() == true:
+			if can_colide == true:
+				can_colide = false
+				$Timer.start()
+				hp-=40
+				if hp <= 0 :
+					$"../Srodek/CPUParticles3D2".emitting = true
+					start_timer = true
+					GlobalWeaponTimer.score += randi_range(1,3)
+		else:
+			pass
+		if ray_4.is_colliding() == true:
+			if can_colide == true:
+				can_colide = false
+				$Timer.start()
+				hp-=40
+				if hp <= 0 :
+					$"../Srodek/CPUParticles3D2".emitting = true
+					start_timer = true
+					GlobalWeaponTimer.score += randi_range(1,3)
+					
+		else:
+			pass
 
 func _on_timer_timeout() -> void:
 	can_colide = true
