@@ -2,8 +2,10 @@
 
 [ext_resource type="Script" uid="uid://1uxi36vt1gj2" path="res://reload.gd" id="1_t8204"]
 [ext_resource type="Texture2D" uid="uid://bljtw0pyxuv03" path="res://Assets/2D/icon.svg" id="2_2bmd2"]
-[ext_resource type="Texture2D" uid="uid://dj8b8so6c2g44" path="res://Assets/2D/Shotgun_Placeholder.png" id="2_roenn"]
-[ext_resource type="Texture2D" uid="uid://by1o3dk1lyhmw" path="res://Assets/2D/LKM_Placeholder.png" id="3_2bmd2"]
+[ext_resource type="Texture2D" uid="uid://maxqtly1ky0c" path="res://Assets/2D/image-removebg-preview_1.png" id="2_rongd"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2bmd2"]
+load_path = "res://.godot/imported/negger-removebg-preview.png-3de253e8c688648f3ff6cada50c18843.ctex"
 
 [node name="Reload" type="Control"]
 layout_mode = 3
@@ -13,8 +15,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_t8204")
-shotgun = ExtResource("2_roenn")
-LKM = ExtResource("3_2bmd2")
+shotgun = ExtResource("2_rongd")
+LKM = SubResource("CompressedTexture2D_2bmd2")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]
 modulate = Color(100, 100, 100, 1)
@@ -54,9 +56,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -128.0
-offset_top = -258.0
+offset_left = -252.0
+offset_top = -284.0
 offset_bottom = -130.0
 grow_horizontal = 0
 grow_vertical = 0
-texture = ExtResource("3_2bmd2")
+texture = SubResource("CompressedTexture2D_2bmd2")
+expand_mode = 1
