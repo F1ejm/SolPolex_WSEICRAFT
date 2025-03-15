@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dyyflk5carbxo"
-path="res://.godot/imported/zamek.glb-b86b9ba97f17385b62aec59debf59f04.scn"
+path="res://.godot/imported/zamek.glb-6e542da79e41e92d0eb49c3a95b6ce34.scn"
 
 [deps]
 
-source_file="res://Assets/3D/zamek.glb"
-dest_files=["res://.godot/imported/zamek.glb-b86b9ba97f17385b62aec59debf59f04.scn"]
+source_file="res://Map_element/zamek/zamek.glb"
+dest_files=["res://.godot/imported/zamek.glb-6e542da79e41e92d0eb49c3a95b6ce34.scn"]
 
 [params]
 
