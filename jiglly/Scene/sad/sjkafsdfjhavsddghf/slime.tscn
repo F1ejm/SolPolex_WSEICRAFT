@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://c1fmrc0hr2h8"]
+[gd_scene load_steps=9 format=3 uid="uid://c1fmrc0hr2h8"]
 
 [ext_resource type="ArrayMesh" uid="uid://hsufmlg3rax1" path="res://Assets/3D/tres_res_obj/glut_zielony.tres" id="1_8vr1c"]
 [ext_resource type="Script" uid="uid://u547qeuks3gg" path="res://jiglly/Scene/sad/sjkafsdfjhavsddghf/slime.gd" id="1_cj23v"]
@@ -9,6 +9,17 @@ radius = 1.5
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_vo40d"]
 radius = 1.9
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vo40d"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_53k2d"]
+material = SubResource("StandardMaterial3D_vo40d")
+
+[sub_resource type="Curve" id="Curve_vo40d"]
+_limits = [0.0, 1.0, -0.65, 1.0]
+_data = [Vector2(-0.65, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [node name="Slime" type="CharacterBody3D" groups=["Enemy"]]
 script = ExtResource("1_cj23v")
@@ -32,4 +43,20 @@ shape = SubResource("SphereShape3D_vo40d")
 [node name="Detection" parent="." instance=ExtResource("3_vo40d")]
 transform = Transform3D(2.8, 0, 0, 0, 2.8, 0, 0, 0, 2.8, 0, 0, 0)
 
+[node name="CPUParticles3D" type="CPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.65433)
+emitting = false
+amount = 100
+one_shot = true
+explosiveness = 0.33
+mesh = SubResource("BoxMesh_53k2d")
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 16.4
+initial_velocity_max = 24.59
+scale_amount_curve = SubResource("Curve_vo40d")
+color = Color(1, 0, 0, 1)
+
 [connection signal="area_exited" from="Area3D" to="." method="_on_area_3d_area_exited"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

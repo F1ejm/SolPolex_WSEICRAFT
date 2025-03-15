@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://3qwbw1ikqfcx"]
+[gd_scene load_steps=19 format=3 uid="uid://3qwbw1ikqfcx"]
 
 [ext_resource type="PackedScene" uid="uid://vne0g6db71bq" path="res://Map_element/barier+ground/static_body_3d.tscn" id="1_rj11h"]
 [ext_resource type="PackedScene" uid="uid://bihx6qd6hllbr" path="res://Player/Player.tscn" id="1_yh5la"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://1f411531vc5t" path="res://UI/Main Menu Etc/settings.tscn" id="5_f6fdm"]
 [ext_resource type="PackedScene" uid="uid://bsnk0vv4jychs" path="res://UI/Player UI/reload.tscn" id="6_rj11h"]
 [ext_resource type="PackedScene" uid="uid://1ceg6p38g2ya" path="res://UI/Player UI/runda_control.tscn" id="7_ib3t1"]
+[ext_resource type="PackedScene" uid="uid://b5cgvfnos2agm" path="res://UI/Player UI/health.tscn" id="7_rix8b"]
 [ext_resource type="PackedScene" uid="uid://deefig0pafbas" path="res://Main/spawner.tscn" id="8_f6fdm"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_qvhan"]
@@ -104,6 +105,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.64654, 1.35222, 1.36462)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.390048, 1.13934, 3.52931)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Health" parent="CanvasLayer" instance=ExtResource("7_rix8b")]
 
 [node name="Runda_Control" parent="CanvasLayer" instance=ExtResource("7_ib3t1")]
 
