@@ -8,7 +8,7 @@
 radius = 0.868612
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_vo40d"]
-radius = 1.9
+radius = 2.98209
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_53k2d"]
 albedo_color = Color(0, 1, 0, 1)
@@ -62,6 +62,9 @@ color = Color(0, 1, 0, 1)
 
 [node name="Detection" parent="." instance=ExtResource("3_vo40d")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+
+[node name="Detection2" parent="." instance=ExtResource("3_vo40d")]
+transform = Transform3D(3.83796, 0, 1.12695, 0, 4, 0, -1.12695, 0, 3.83796, 0, 0, 0)
 
 [node name="CPUParticles3D" type="CPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.65433)
