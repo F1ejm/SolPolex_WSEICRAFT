@@ -15,54 +15,54 @@ mesh = ExtResource("1_hascf")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="barier" groups=["sciana"]]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="barier/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="barier/StaticBody3D" groups=["sciana"]]
 transform = Transform3D(0.743145, 0, 0.66913, 0, 1, 0, -0.66913, 0, 0.743145, 1.18573, -0.636719, 1.59019)
 shape = SubResource("BoxShape3D_4crlr")
 
-[node name="CollisionShape3D9" type="CollisionShape3D" parent="barier/StaticBody3D"]
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="barier/StaticBody3D" groups=["sciana"]]
 transform = Transform3D(0.999993, 0, 0.0037873, 0, 1, 0, -0.0037873, 0, 0.999993, 13.4571, -0.636719, -3.12955)
 shape = SubResource("BoxShape3D_4crlr")
 
-[node name="CollisionShape3D10" type="CollisionShape3D" parent="barier/StaticBody3D"]
+[node name="CollisionShape3D10" type="CollisionShape3D" parent="barier/StaticBody3D" groups=["sciana"]]
 transform = Transform3D(0.856789, 0, -0.515666, 0, 1, 0, 0.515666, 0, 0.856789, 25.3397, 111.056, 0.368612)
 shape = SubResource("BoxShape3D_4crlr")
 
-[node name="CollisionShape3D11" type="CollisionShape3D" parent="barier/StaticBody3D"]
+[node name="CollisionShape3D11" type="CollisionShape3D" parent="barier/StaticBody3D" groups=["sciana"]]
 transform = Transform3D(0.64011, 0, -0.768283, 0, 1, 0, 0.768283, 0, 0.64011, 35.0013, 111.056, 9.64151)
 shape = SubResource("BoxShape3D_4crlr")
 
-[node name="CollisionShape3D12" type="CollisionShape3D" parent="barier/StaticBody3D"]
+[node name="CollisionShape3D12" type="CollisionShape3D" parent="barier/StaticBody3D" groups=["sciana"]]
 transform = Transform3D(-0.0909106, 0, -0.995859, 0, 1, 0, 0.995859, 0, -0.0909106, 35.0013, 111.056, 16.5268)
 shape = SubResource("BoxShape3D_4crlr")
 
-[node name="CollisionShape3D13" type="CollisionShape3D" parent="barier/StaticBody3D"]
+[node name="CollisionShape3D13" type="CollisionShape3D" parent="barier/StaticBody3D" groups=["sciana"]]
 transform = Transform3D(-0.693666, 0, -0.720297, 0, 1, 0, 0.720297, 0, -0.693666, 35.0013, 111.056, 19.081)
 shape = SubResource("BoxShape3D_4crlr")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="barier/StaticBody3D"]
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="barier/StaticBody3D" groups=["sciana"]]
 transform = Transform3D(0.994994, 0, 0.0999275, 0, 1, 0, -0.0999275, 0, 0.994994, 17.4012, -0.636719, 26.0344)
 shape = SubResource("BoxShape3D_4crlr")
 
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="barier/StaticBody3D"]
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="barier/StaticBody3D" groups=["sciana"]]
 transform = Transform3D(0.990657, 0, -0.136373, 0, 1, 0, 0.136373, 0, 0.990657, 10.5779, -0.636719, 25.1947)
 shape = SubResource("BoxShape3D_4crlr")
 
-[node name="CollisionShape3D5" type="CollisionShape3D" parent="barier/StaticBody3D"]
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="barier/StaticBody3D" groups=["sciana"]]
 transform = Transform3D(0.830984, 0, -0.556295, 0, 1, 0, 0.556295, 0, 0.830984, 1.37529, -0.636719, 21.0657)
 shape = SubResource("BoxShape3D_4crlr")
 
-[node name="CollisionShape3D6" type="CollisionShape3D" parent="barier/StaticBody3D"]
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="barier/StaticBody3D" groups=["sciana"]]
 transform = Transform3D(0.830984, 0, -0.556295, 0, 1, 0, 0.556295, 0, 0.830984, 1.37529, -0.636719, 21.0657)
 shape = SubResource("BoxShape3D_4crlr")
 
-[node name="CollisionShape3D7" type="CollisionShape3D" parent="barier/StaticBody3D"]
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="barier/StaticBody3D" groups=["sciana"]]
 transform = Transform3D(0.329905, 0, -0.944014, 0, 1, 0, 0.944014, 0, 0.329905, -4.04831, -0.636719, 12.8428)
 shape = SubResource("BoxShape3D_4crlr")
 
-[node name="CollisionShape3D8" type="CollisionShape3D" parent="barier/StaticBody3D"]
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="barier/StaticBody3D" groups=["sciana"]]
 transform = Transform3D(-0.27609, 0, -0.961131, 0, 1, 0, 0.961131, 0, -0.27609, -3.96824, -0.636719, 8.37483)
 shape = SubResource("BoxShape3D_4crlr")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="barier/StaticBody3D"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="barier/StaticBody3D" groups=["sciana"]]
 transform = Transform3D(0.867765, 0, 0.496974, 0, 1, 0, -0.496974, 0, 0.867765, 29.3365, -0.636719, 22.0885)
 shape = SubResource("BoxShape3D_4crlr")
