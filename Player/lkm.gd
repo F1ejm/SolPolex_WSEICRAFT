@@ -60,6 +60,7 @@ func Shot(delta):
 	var bullet = bullet_path.instantiate()
 	get_tree().current_scene.add_child(bullet) 
 	bullet.dire = global_rotation
+	bullet.odrzut = 0.2
 	bullet.global_position = miejsce_spawnu_pocisku.global_position
 	bullet.global_transform.basis = miejsce_spawnu_pocisku.global_transform.basis
 	bullet.obrazenia = obrazenia
