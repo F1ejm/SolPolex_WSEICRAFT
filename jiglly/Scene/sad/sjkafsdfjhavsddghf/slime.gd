@@ -21,7 +21,6 @@ func _physics_process(delta: float) -> void:
 	
 	if navigation_agent.is_navigation_finished():
 		return
-	
 	var next_position: Vector3 = navigation_agent.get_next_path_position()
 	if abs(velocity.z) < abs(next_position.z * MoveSpeed) and abs(velocity.x) < abs(next_position.x * MoveSpeed):
 		velocity = global_position.direction_to(next_position)  *  MoveSpeed
@@ -30,5 +29,6 @@ func _physics_process(delta: float) -> void:
 	
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
-	#if body
 	pass
+func test (a):
+	velocity=a

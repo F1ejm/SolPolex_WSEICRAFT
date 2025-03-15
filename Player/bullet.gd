@@ -32,8 +32,8 @@ func _on_timer_timeout() -> void:
 func _on_area_3d_area_entered(area: Area3D) -> void:
 
 	if area.get_parent().is_in_group("Enemy"):
-		var dystans = position - area.get_parent().srodek.position
-		area.get_parent().velocity = dystans * 7 * Vector3(-1.2,1,1)
-		
+#		var dystans = position - area.get_parent().srodek.position
+#		area.get_parent().velocity = dystans * 7 * Vector3(-1.2,1,1)
+		area.get_parent().test(transform.basis * Vector3(0,0,-speed))
 		queue_free()
 		
