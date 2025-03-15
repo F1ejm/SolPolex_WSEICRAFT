@@ -16,28 +16,38 @@ func _process(delta: float) -> void:
 		if can_colide == true:
 			can_colide = false
 			$Timer.start()
-			print("ads")
+			hp-=40
+			if hp <= 0 :
+				$"..".queue_free()
 	else:
 		pass
 	if ray_2.is_colliding() == true:
 		if can_colide == true:
 			can_colide = false
 			$Timer.start()
-			print("ads")
+			hp-=40
+			print(hp)
+			if hp <= 0 :
+				$"..".queue_free()
 	else:
 		pass
 	if ray_3.is_colliding() == true:
 		if can_colide == true:
 			can_colide = false
 			$Timer.start()
-			print("ads")
+			hp-=40
+			if hp <= 0 :
+				$"..".queue_free()
 	else:
 		pass
 	if ray_4.is_colliding() == true:
 		if can_colide == true:
 			can_colide = false
 			$Timer.start()
-			print("ads")
+			hp-=40
+			if hp <= 0 :
+				$"..".queue_free()
+				
 	else:
 		pass
 
