@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bm1xl5l5ari26"
-path="res://.godot/imported/hwaławielkimuksinpizingowi.glb-1b93ef96fbf40e9917326c74a38e8dba.scn"
+path="res://.godot/imported/hwaławielkimuksinpizingowi.glb-a2f4bc04babcb14b9614af2751a11f6a.scn"
 
 [deps]
 
-source_file="res://Assets/3D/hwaławielkimuksinpizingowi.glb"
-dest_files=["res://.godot/imported/hwaławielkimuksinpizingowi.glb-1b93ef96fbf40e9917326c74a38e8dba.scn"]
+source_file="res://Map_element/hwaławielkimuksinpizingowi.glb"
+dest_files=["res://.godot/imported/hwaławielkimuksinpizingowi.glb-a2f4bc04babcb14b9614af2751a11f6a.scn"]
 
 [params]
 

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bnyogf04kmmb"
-path="res://.godot/imported/hmura.glb-f0beb6262a8b47245f644d59b50a8cc8.scn"
+uid="uid://dwig2fbcvuf6h"
+path="res://.godot/imported/kwiatuszek1.glb-dd11c6eab137655efb0260d50d13604b.scn"
 
 [deps]
 
-source_file="res://Assets/3D/hmura.glb"
-dest_files=["res://.godot/imported/hmura.glb-f0beb6262a8b47245f644d59b50a8cc8.scn"]
+source_file="res://Map_element/kwiatuszek1.glb"
+dest_files=["res://.godot/imported/kwiatuszek1.glb-dd11c6eab137655efb0260d50d13604b.scn"]
 
 [params]
 

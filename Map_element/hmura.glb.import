@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b41ec1kibipeg"
-path="res://.godot/imported/monolit.glb-2f2e7fb904818fbd976038483c2015ee.scn"
+uid="uid://bnyogf04kmmb"
+path="res://.godot/imported/hmura.glb-229d5dc424abb61f548e837828e14054.scn"
 
 [deps]
 
-source_file="res://Assets/3D/monolit.glb"
-dest_files=["res://.godot/imported/monolit.glb-2f2e7fb904818fbd976038483c2015ee.scn"]
+source_file="res://Map_element/hmura.glb"
+dest_files=["res://.godot/imported/hmura.glb-229d5dc424abb61f548e837828e14054.scn"]
 
 [params]
 

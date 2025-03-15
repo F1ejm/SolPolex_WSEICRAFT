@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dwig2fbcvuf6h"
-path="res://.godot/imported/kwiatuszek1.glb-b27841e310550a793c73b717eb3012d6.scn"
+uid="uid://b41ec1kibipeg"
+path="res://.godot/imported/monolit.glb-eca731c329f1424afb4557628c48716d.scn"
 
 [deps]
 
-source_file="res://Assets/3D/kwiatuszek1.glb"
-dest_files=["res://.godot/imported/kwiatuszek1.glb-b27841e310550a793c73b717eb3012d6.scn"]
+source_file="res://Map_element/monolit.glb"
+dest_files=["res://.godot/imported/monolit.glb-eca731c329f1424afb4557628c48716d.scn"]
 
 [params]
 

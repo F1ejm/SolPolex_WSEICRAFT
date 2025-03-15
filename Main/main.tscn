@@ -1,7 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://3qwbw1ikqfcx"]
+[gd_scene load_steps=23 format=3 uid="uid://3qwbw1ikqfcx"]
 
 [ext_resource type="PackedScene" uid="uid://vne0g6db71bq" path="res://Map_element/barier+ground/static_body_3d.tscn" id="1_rj11h"]
 [ext_resource type="PackedScene" uid="uid://bihx6qd6hllbr" path="res://Player/Player.tscn" id="1_yh5la"]
+[ext_resource type="PackedScene" uid="uid://dwig2fbcvuf6h" path="res://Map_element/kwiatuszek1.glb" id="2_l5bfp"]
 [ext_resource type="PackedScene" uid="uid://dx05x3e7qmsb8" path="res://Map_element/zamek/zamek.tscn" id="2_qac2q"]
 [ext_resource type="PackedScene" uid="uid://d0onca810a8q" path="res://Map_element/tree_2/tree_2.tscn" id="3_f3gf5"]
 [ext_resource type="PackedScene" uid="uid://ba28u21brsj67" path="res://UI/Main Menu Etc/main_menu.tscn" id="3_liyct"]
@@ -13,6 +14,9 @@
 [ext_resource type="PackedScene" uid="uid://deefig0pafbas" path="res://Main/spawner.tscn" id="8_f6fdm"]
 [ext_resource type="PackedScene" uid="uid://drldidi36sesp" path="res://UI/Main Menu Etc/instruction.tscn" id="13_rix8b"]
 [ext_resource type="PackedScene" uid="uid://bv8i26ayqplgu" path="res://UI/Main Menu Etc/death_screen.tscn" id="14_0jx5h"]
+[ext_resource type="PackedScene" uid="uid://bm1xl5l5ari26" path="res://Map_element/hwaławielkimuksinpizingowi.glb" id="14_uhr2j"]
+[ext_resource type="PackedScene" uid="uid://b41ec1kibipeg" path="res://Map_element/monolit.glb" id="16_guo5i"]
+[ext_resource type="PackedScene" uid="uid://dtp1gma2db2um" path="res://Assets/3D/bush.glb" id="17_guo5i"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_qvhan"]
 vertices = PackedVector3Array(-78.9429, 1, -64.9481, -78.9429, 1, 65.0519, 79.0571, 1, 65.0519, 79.0571, 1, -64.9481)
@@ -58,6 +62,56 @@ use_collision = true
 [node name="CSGBox3D" type="CSGBox3D" parent="world/CSGCombiner3D"]
 size = Vector3(158.886, 1, 130.896)
 material = SubResource("StandardMaterial3D_rj11h")
+
+[node name="random_item" type="Node3D" parent="."]
+
+[node name="hwaławielkimuksinpizingowi" parent="random_item" instance=ExtResource("14_uhr2j")]
+transform = Transform3D(0.185, 0, 0, 0, 0.185, 0, 0, 0, 0.185, -5.14921, 6.58893, 10.9478)
+
+[node name="kwiatuszek1" parent="random_item" instance=ExtResource("2_l5bfp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0.49227, 19)
+
+[node name="kwiatuszek2" parent="random_item" instance=ExtResource("2_l5bfp")]
+transform = Transform3D(-0.319373, 0, -0.947629, 0, 1, 0, 0.947629, 0, -0.319373, 44.8105, 0.49227, 0.641094)
+
+[node name="kwiatuszek3" parent="random_item" instance=ExtResource("2_l5bfp")]
+transform = Transform3D(-0.319373, 0, -0.947629, 0, 1, 0, 0.947629, 0, -0.319373, 3.1183, 0.49227, 0.641094)
+
+[node name="kwiatuszek4" parent="random_item" instance=ExtResource("2_l5bfp")]
+transform = Transform3D(-0.319373, 0, -0.947629, 0, 1, 0, 0.947629, 0, -0.319373, 12.8743, 0.49227, 7.71717)
+
+[node name="kwiatuszek5" parent="random_item" instance=ExtResource("2_l5bfp")]
+transform = Transform3D(-0.319373, 0, -0.947629, 0, 1, 0, 0.947629, 0, -0.319373, 12.8743, 0.49227, -13.2828)
+
+[node name="kwiatuszek6" parent="random_item" instance=ExtResource("2_l5bfp")]
+transform = Transform3D(-0.319373, 0, -0.947629, 0, 1, 0, 0.947629, 0, -0.319373, -9.37501, 0.49227, -4.91531)
+
+[node name="kwiatuszek7" parent="random_item" instance=ExtResource("2_l5bfp")]
+transform = Transform3D(-0.319373, 0, -0.947629, 0, 1, 0, 0.947629, 0, -0.319373, -9.37501, 0.49227, -27.2615)
+
+[node name="kwiatuszek8" parent="random_item" instance=ExtResource("2_l5bfp")]
+transform = Transform3D(-0.319373, 0, -0.947629, 0, 1, 0, 0.947629, 0, -0.319373, 14.766, 0.49227, -36.6678)
+
+[node name="kwiatuszek9" parent="random_item" instance=ExtResource("2_l5bfp")]
+transform = Transform3D(-0.319373, 0, -0.947629, 0, 1, 0, 0.947629, 0, -0.319373, -18.939, 0.49227, -36.6678)
+
+[node name="kwiatuszek10" parent="random_item" instance=ExtResource("2_l5bfp")]
+transform = Transform3D(-0.319373, 0, -0.947629, 0, 1, 0, 0.947629, 0, -0.319373, -35.2122, 0.49227, -16.0988)
+
+[node name="kwiatuszek11" parent="random_item" instance=ExtResource("2_l5bfp")]
+transform = Transform3D(-0.319373, 0, -0.947629, 0, 1, 0, 0.947629, 0, -0.319373, -0.940016, 0.49227, -18.3212)
+
+[node name="kwiatuszek12" parent="random_item" instance=ExtResource("2_l5bfp")]
+transform = Transform3D(-0.319373, 0, -0.947629, 0, 1, 0, 0.947629, 0, -0.319373, -24.1033, 0.49227, 1.62411)
+
+[node name="kwiatuszek13" parent="random_item" instance=ExtResource("2_l5bfp")]
+transform = Transform3D(-0.319373, 0, -0.947629, 0, 1, 0, 0.947629, 0, -0.319373, -33.4362, 0.904825, 17.989)
+
+[node name="kwiatuszek14" parent="random_item" instance=ExtResource("2_l5bfp")]
+transform = Transform3D(-0.319373, 0, -0.947629, 0, 1, 0, 0.947629, 0, -0.319373, -14.0843, 0.904825, 11.899)
+
+[node name="kwiatuszek15" parent="random_item" instance=ExtResource("2_l5bfp")]
+transform = Transform3D(-0.319373, 0, -0.947629, 0, 1, 0, 0.947629, 0, -0.319373, -9.03312, 0.904825, 27.9379)
 
 [node name="colision_on_object" type="Node3D" parent="."]
 
@@ -158,3 +212,48 @@ main_menu = NodePath("../Main_Menu")
 
 [node name="Control" parent="CanvasLayer" instance=ExtResource("13_rix8b")]
 visible = false
+
+[node name="monolit" parent="." instance=ExtResource("16_guo5i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.61567, 1.02375, 9.70995)
+
+[node name="monolit2" parent="." instance=ExtResource("16_guo5i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.6116, 0.852852, 14.1208)
+
+[node name="monolit3" parent="." instance=ExtResource("16_guo5i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.4093, 0.852844, 4.41538)
+
+[node name="monolit4" parent="." instance=ExtResource("16_guo5i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.9252, 0.852844, -22.6116)
+
+[node name="bush" parent="." instance=ExtResource("17_guo5i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.1083, 0.223437, 29.8061)
+
+[node name="bush4" parent="." instance=ExtResource("17_guo5i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.1153, 0.223437, 14.7105)
+
+[node name="bush5" parent="." instance=ExtResource("17_guo5i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.3314, 0.223437, -13.079)
+
+[node name="bush6" parent="." instance=ExtResource("17_guo5i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.9487, 0.223437, -31.3974)
+
+[node name="bush7" parent="." instance=ExtResource("17_guo5i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.6583, 0.0265822, -45.2178)
+
+[node name="bush8" parent="." instance=ExtResource("17_guo5i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.62517, 0.179792, -44.5791)
+
+[node name="bush9" parent="." instance=ExtResource("17_guo5i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.6255, 0.179792, -37.0048)
+
+[node name="bush10" parent="." instance=ExtResource("17_guo5i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.3095, 0.118078, -19.956)
+
+[node name="bush11" parent="." instance=ExtResource("17_guo5i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.062, 0.108381, 0.16062)
+
+[node name="bush2" parent="." instance=ExtResource("17_guo5i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.230767, 37)
+
+[node name="bush3" parent="." instance=ExtResource("17_guo5i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.6122, 0.287455, 42.6337)
