@@ -30,3 +30,6 @@ func _on_main_menu_pressed():
 	visible = false
 	main_menu.visible = true
 	AaGlobal.Is_Playing = false
+
+func _on_reset_pressed() -> void:
+	get_tree().reload_current_scene()
