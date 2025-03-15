@@ -18,6 +18,8 @@ var timer: bool = false
 var Życie: int = 100
 var death_screen: bool = false
 
+var score: int = 0
+
 func _process(delta: float):
 	if Życie <= 0:
 		AaGlobal.Is_Playing = false
