@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://dnwm21ljrfqm7"]
+
+[ext_resource type="Script" uid="uid://wr0be2tmffhb" path="res://instructions.gd" id="1_5sy8h"]
+[ext_resource type="Texture2D" uid="uid://obudm7o6bgju" path="res://Assets/2D/emenny.png" id="2_m4ix3"]
+[ext_resource type="Texture2D" uid="uid://cdypawx3bdmkh" path="res://Assets/2D/gameobjective.png" id="3_sflf6"]
+[ext_resource type="Texture2D" uid="uid://cjbku0nku2hhq" path="res://Assets/2D/wepons.png" id="4_7q6sq"]
+[ext_resource type="Texture2D" uid="uid://bx5exs36awgf4" path="res://Assets/2D/insturcions.png" id="5_cp6gv"]
+
+[node name="Instructions" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5sy8h")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.821024, 0.988707, 0.812176, 1)
+
+[node name="Emenny" type="Sprite2D" parent="."]
+position = Vector2(378, 699)
+scale = Vector2(0.729219, 0.729219)
+texture = ExtResource("2_m4ix3")
+
+[node name="Gameobjective" type="Sprite2D" parent="."]
+position = Vector2(573, 448)
+scale = Vector2(0.739295, 0.756456)
+texture = ExtResource("3_sflf6")
+
+[node name="Wepons" type="Sprite2D" parent="."]
+position = Vector2(736, 425)
+scale = Vector2(0.657431, 0.674755)
+texture = ExtResource("4_7q6sq")
+
+[node name="Insturcions" type="Sprite2D" parent="."]
+position = Vector2(598, 549)
+texture = ExtResource("5_cp6gv")
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 611.0
+offset_right = 126.0
+offset_bottom = 642.0
+text = "Exit
+"
+
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
