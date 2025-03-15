@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bihx6qd6hllbr"]
+[gd_scene load_steps=6 format=3 uid="uid://bihx6qd6hllbr"]
 
 [ext_resource type="Script" uid="uid://dio4tecea53t5" path="res://Player/player.gd" id="1_3qydi"]
 [ext_resource type="Script" uid="uid://cf7r15huunuo3" path="res://Player/weapon.gd" id="2_q3lat"]
-[ext_resource type="PackedScene" uid="uid://dkwfr74gifg4t" path="res://Player/shotgun.tscn" id="3_tok1r"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_q3lat"]
 
@@ -36,12 +35,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
 
 [node name="Camera3D" type="Camera3D" parent="neck/head"]
 
-[node name="weapon" type="Node3D" parent="neck/head/Camera3D" node_paths=PackedStringArray("weapon")]
+[node name="weapon" type="Node3D" parent="neck/head/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.625372, -0.63146, -0.991883)
 script = ExtResource("2_q3lat")
-weapon = NodePath("Shotgun")
-
-[node name="Shotgun" parent="neck/head/Camera3D/weapon" instance=ExtResource("3_tok1r")]
 
 [node name="RayCast_lewo" type="RayCast3D" parent="neck/head"]
 transform = Transform3D(-4.37114e-08, 0.4, 0, -1, -1.74846e-08, 0, 0, 0, 1, -0.5, -0.5, 0)
