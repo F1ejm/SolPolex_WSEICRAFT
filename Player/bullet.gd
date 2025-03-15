@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 var obrazenia
 var speed
-
+var odrzut
 var timer: float = 0.1
 var start_timer: bool = false
 
@@ -33,7 +33,7 @@ func _on_area_3d_area_entered(area: Area3D) -> void:
 
 	if area.get_parent().is_in_group("Enemy"):
 		var dystans = position - area.get_parent().srodek.position
-		area.get_parent().velocity = dystans * 7 * Vector3(-1.2,1,1)
+		area.get_parent().linear_velocity = dystans * 7  * odrzut
 		
 		queue_free()
 		

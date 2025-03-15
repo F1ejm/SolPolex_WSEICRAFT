@@ -56,6 +56,7 @@ func Shot():
 	bullet.global_position = miejsce_spawnu_pocisku.global_position
 	bullet.global_transform.basis = miejsce_spawnu_pocisku.global_transform.basis
 	bullet.obrazenia = obrazenia
+	bullet.odrzut = 1
 	bullet.speed = speed
 	
 	for i in range(ilosc_pociskow):
@@ -67,6 +68,7 @@ func Shot():
 		randf_range(get_parent().global_rotation.z - 0.2, get_parent().global_rotation.z + 0.2))
 		bullet2.global_position = miejsce_spawnu_pocisku.global_position
 		bullet2.area_3d.monitoring = false
+		bullet2.odrzut = 1
 		bullet2.obrazenia = obrazenia
 		bullet2.speed = speed
 	
