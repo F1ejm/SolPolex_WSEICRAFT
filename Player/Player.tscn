@@ -7,7 +7,7 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_q3lat"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3qydi"]
-height = 1.65174
+height = 2.76609
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_tok1r"]
 

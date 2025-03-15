@@ -65,5 +65,5 @@ func Shot(delta):
 	bullet.global_position = miejsce_spawnu_pocisku.global_position
 	bullet.global_transform.basis = miejsce_spawnu_pocisku.global_transform.basis
 	bullet.obrazenia = obrazenia
-	bullet.odrzut = 0.1
+	bullet.odrzut = 0.3
 	bullet.speed = speed

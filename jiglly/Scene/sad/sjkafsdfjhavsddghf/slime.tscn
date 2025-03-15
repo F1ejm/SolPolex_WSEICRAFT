@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cqoftflownyn4" path="res://detection/detection.tscn" id="3_vo40d"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_cj23v"]
-radius = 1.5
+radius = 0.868612
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_vo40d"]
 radius = 1.9
