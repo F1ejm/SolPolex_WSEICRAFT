@@ -13,3 +13,5 @@ func _process(delta: float) -> void:
 	runda_licznik.text = str(SpawnerGlobal.runda) + " runda"
 	var x = int(SpawnerGlobal.czas_rundy)
 	czas_rundy.text = str(x) + " s"
+	
+	$Runda_Licznik2.text = "score " + str(GlobalWeaponTimer.score)

@@ -35,3 +35,14 @@ offset_right = -140.0
 offset_bottom = 35.0
 grow_horizontal = 0
 label_settings = SubResource("LabelSettings_rbems")
+
+[node name="Runda_Licznik2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -315.0
+offset_right = -275.0
+offset_bottom = 35.0
+grow_horizontal = 0
+label_settings = SubResource("LabelSettings_rbems")
