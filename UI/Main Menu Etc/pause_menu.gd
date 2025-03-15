@@ -9,7 +9,7 @@ func _ready():
 	visible = false
 
 func _process(delta):
-	if Input.is_action_just_pressed("escape") and settings.visible == false and main_menu.visible == false:
+	if Input.is_action_just_pressed("escape")  and main_menu.visible == false:
 		
 		if AaGlobal.Is_Playing == true:
 			visible = true
@@ -25,9 +25,6 @@ func _on_resume_pressed():
 	AaGlobal.Is_Playing = true
 	AaGlobal.Resume()
 	
-func _on_settings_pressed():
-	visible = false
-	settings.visible = true
 
 func _on_main_menu_pressed():
 	visible = false

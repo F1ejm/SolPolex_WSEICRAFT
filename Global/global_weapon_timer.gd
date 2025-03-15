@@ -16,8 +16,13 @@ var timer_ladowanie: float = 0.6
 var timer: bool = false
 
 var Życie: int = 100
+var death_screen: bool = false
 
 func _process(delta: float):
+	if Życie <= 0:
+		AaGlobal.Is_Playing = false
+		death_screen = true
+	
 	if start_reload == true:
 		reload = reload - delta
 	if reload <= 0:

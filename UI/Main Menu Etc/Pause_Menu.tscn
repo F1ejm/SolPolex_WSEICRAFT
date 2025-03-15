@@ -52,14 +52,9 @@ label_settings = SubResource("LabelSettings_tsqat")
 layout_mode = 2
 text = "Resume"
 
-[node name="settings" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Settings"
-
 [node name="main_menu" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Main Menu"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/main_menu" to="." method="_on_main_menu_pressed"]

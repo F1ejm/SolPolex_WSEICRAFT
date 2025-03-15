@@ -1,18 +1,17 @@
-[gd_scene load_steps=19 format=3 uid="uid://3qwbw1ikqfcx"]
+[gd_scene load_steps=18 format=3 uid="uid://3qwbw1ikqfcx"]
 
 [ext_resource type="PackedScene" uid="uid://vne0g6db71bq" path="res://Map_element/barier+ground/static_body_3d.tscn" id="1_rj11h"]
 [ext_resource type="PackedScene" uid="uid://bihx6qd6hllbr" path="res://Player/Player.tscn" id="1_yh5la"]
-[ext_resource type="PackedScene" uid="uid://c1fmrc0hr2h8" path="res://jiglly/Scene/sad/sjkafsdfjhavsddghf/slime.tscn" id="2_2w1kt"]
 [ext_resource type="PackedScene" uid="uid://dx05x3e7qmsb8" path="res://Map_element/zamek/zamek.tscn" id="2_qac2q"]
 [ext_resource type="PackedScene" uid="uid://d0onca810a8q" path="res://Map_element/tree_2/tree_2.tscn" id="3_f3gf5"]
 [ext_resource type="PackedScene" uid="uid://ba28u21brsj67" path="res://UI/Main Menu Etc/main_menu.tscn" id="3_liyct"]
 [ext_resource type="PackedScene" uid="uid://oonygbl7t5sb" path="res://UI/Main Menu Etc/Pause_Menu.tscn" id="4_ib3t1"]
 [ext_resource type="PackedScene" uid="uid://bgvau7n1w1ogg" path="res://Map_element/tree/tree.tscn" id="4_rix8b"]
-[ext_resource type="PackedScene" uid="uid://1f411531vc5t" path="res://UI/Main Menu Etc/settings.tscn" id="5_f6fdm"]
 [ext_resource type="PackedScene" uid="uid://bsnk0vv4jychs" path="res://UI/Player UI/reload.tscn" id="6_rj11h"]
 [ext_resource type="PackedScene" uid="uid://1ceg6p38g2ya" path="res://UI/Player UI/runda_control.tscn" id="7_ib3t1"]
 [ext_resource type="PackedScene" uid="uid://b5cgvfnos2agm" path="res://UI/Player UI/health.tscn" id="7_rix8b"]
 [ext_resource type="PackedScene" uid="uid://deefig0pafbas" path="res://Main/spawner.tscn" id="8_f6fdm"]
+[ext_resource type="PackedScene" uid="uid://bv8i26ayqplgu" path="res://UI/Main Menu Etc/death_screen.tscn" id="14_0jx5h"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_qvhan"]
 vertices = PackedVector3Array(-78.9429, 1, -64.9481, -78.9429, 1, 65.0519, 79.0571, 1, 65.0519, 79.0571, 1, -64.9481)
@@ -101,8 +100,8 @@ shadow_enabled = true
 [node name="Player" parent="." instance=ExtResource("1_yh5la")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.64654, 1.35222, 1.36462)
 
-[node name="Slime" parent="." instance=ExtResource("2_2w1kt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.390048, 1.13934, 3.52931)
+[node name="Spawner" parent="." instance=ExtResource("8_f6fdm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.10995, 1.32163, -3.96726)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -112,15 +111,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.390048, 1.13934, 3.52931)
 
 [node name="Reload" parent="CanvasLayer" instance=ExtResource("6_rj11h")]
 
-[node name="Main_Menu" parent="CanvasLayer" node_paths=PackedStringArray("settings") instance=ExtResource("3_liyct")]
-settings = NodePath("../Settings")
+[node name="Main_Menu" parent="CanvasLayer" instance=ExtResource("3_liyct")]
 
-[node name="Pause_Menu" parent="CanvasLayer" node_paths=PackedStringArray("settings", "main_menu") instance=ExtResource("4_ib3t1")]
-settings = NodePath("../Settings")
+[node name="Pause_Menu" parent="CanvasLayer" node_paths=PackedStringArray("main_menu") instance=ExtResource("4_ib3t1")]
 main_menu = NodePath("../Main_Menu")
 
-[node name="Settings" parent="CanvasLayer" node_paths=PackedStringArray("main_menu") instance=ExtResource("5_f6fdm")]
+[node name="Death_Screen" parent="CanvasLayer" node_paths=PackedStringArray("main_menu") instance=ExtResource("14_0jx5h")]
+visible = false
 main_menu = NodePath("../Main_Menu")
-
-[node name="Spawner" parent="CanvasLayer" instance=ExtResource("8_f6fdm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.10995, 1.32163, -3.96726)

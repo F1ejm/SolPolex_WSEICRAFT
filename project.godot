@@ -17,7 +17,7 @@ config/icon="res://Assets/2D/icon.svg"
 
 [autoload]
 
-AaGlobal="*res://aa_global.gd"
+AaGlobal="*res://Global/aa_global.gd"
 GlobalWeaponTimer="*res://Global/global_weapon_timer.gd"
 SpawnerGlobal="*res://Global/spawner_global.gd"
 
