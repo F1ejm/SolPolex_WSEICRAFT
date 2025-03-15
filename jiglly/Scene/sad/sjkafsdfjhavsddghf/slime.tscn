@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c1fmrc0hr2h8"]
+[gd_scene load_steps=6 format=3 uid="uid://c1fmrc0hr2h8"]
 
 [ext_resource type="ArrayMesh" uid="uid://hsufmlg3rax1" path="res://Assets/3D/tres_res_obj/glut_zielony.tres" id="1_8vr1c"]
 [ext_resource type="Script" uid="uid://u547qeuks3gg" path="res://jiglly/Scene/sad/sjkafsdfjhavsddghf/slime.gd" id="1_cj23v"]
+[ext_resource type="PackedScene" uid="uid://c5ctk7dbf01n6" path="res://colision_detection_slime/detector.tscn" id="3_vo40d"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_cj23v"]
 radius = 1.5
@@ -27,5 +28,7 @@ mesh = ExtResource("1_8vr1c")
 shape = SubResource("SphereShape3D_vo40d")
 
 [node name="Srodek" type="Node3D" parent="."]
+
+[node name="detector" parent="." instance=ExtResource("3_vo40d")]
 
 [connection signal="area_exited" from="Area3D" to="." method="_on_area_3d_area_exited"]

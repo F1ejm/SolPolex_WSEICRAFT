@@ -12,6 +12,14 @@
 [ext_resource type="PackedScene" uid="uid://bsnk0vv4jychs" path="res://UI/Player UI/reload.tscn" id="6_rj11h"]
 [ext_resource type="PackedScene" uid="uid://1ceg6p38g2ya" path="res://UI/Player UI/runda_control.tscn" id="7_ib3t1"]
 [ext_resource type="PackedScene" uid="uid://deefig0pafbas" path="res://Main/spawner.tscn" id="8_f6fdm"]
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+[ext_resource type="PackedScene" uid="uid://c8h7f86xbqxsc" path="res://Assets/3D/glut_zielony.glb" id="13_rix8b"]
+=======
+[ext_resource type="PackedScene" uid="uid://b5cgvfnos2agm" path="res://UI/Player UI/health.tscn" id="13_rix8b"]
+>>>>>>> Stashed changes
+>>>>>>> parent of f40397d (Revert "nic")
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_qvhan"]
 vertices = PackedVector3Array(-78.9429, 1, -64.9481, -78.9429, 1, 65.0519, 79.0571, 1, 65.0519, 79.0571, 1, -64.9481)
@@ -49,7 +57,7 @@ material = SubResource("StandardMaterial3D_rj11h")
 [node name="StaticBody3D" parent="colision_on_object" instance=ExtResource("1_rj11h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.26414, 0)
 
-[node name="StaticBody3D2" parent="colision_on_object" instance=ExtResource("2_qac2q")]
+[node name="StaticBody3D2" parent="colision_on_object" groups=["sciana"] instance=ExtResource("2_qac2q")]
 transform = Transform3D(0.68, 0, 0, 0, 0.68, 0, 0, 0, 0.68, 0, 0.177241, 8.87063)
 
 [node name="StaticBody3D3" parent="colision_on_object" instance=ExtResource("3_f3gf5")]
@@ -104,6 +112,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.64654, 1.35222, 1.36462)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.390048, 1.13934, 3.52931)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Health" parent="CanvasLayer" instance=ExtResource("13_rix8b")]
 
 [node name="Runda_Control" parent="CanvasLayer" instance=ExtResource("7_ib3t1")]
 
