@@ -9,16 +9,26 @@ var can_colide = true
 @export var ray_3 : RayCast3D
 @export var ray_4 : RayCast3D
 
+var start_timer = false
+var timer: float = 0
 
 
 func _process(delta: float) -> void:
+	if start_timer == true:
+		timer += delta
+	if timer >= 0.5:
+		$"..".queue_free()
+	
 	if ray_1.is_colliding() == true:
 		if can_colide == true:
 			can_colide = false
 			$Timer.start()
 			hp-=40
 			if hp <= 0 :
-				$"..".queue_free()
+				$"../Srodek/CPUParticles3D2".emitting = true
+				start_timer = true
+				GlobalWeaponTimer.score += randi_range(1,3)
+				
 	else:
 		pass
 	if ray_2.is_colliding() == true:
@@ -28,7 +38,9 @@ func _process(delta: float) -> void:
 			hp-=40
 			print(hp)
 			if hp <= 0 :
-				$"..".queue_free()
+				$"../Srodek/CPUParticles3D2".emitting = true
+				start_timer = true
+				GlobalWeaponTimer.score += randi_range(1,3)
 	else:
 		pass
 	if ray_3.is_colliding() == true:
@@ -37,7 +49,9 @@ func _process(delta: float) -> void:
 			$Timer.start()
 			hp-=40
 			if hp <= 0 :
-				$"..".queue_free()
+				$"../Srodek/CPUParticles3D2".emitting = true
+				start_timer = true
+				GlobalWeaponTimer.score += randi_range(1,3)
 	else:
 		pass
 	if ray_4.is_colliding() == true:
@@ -46,7 +60,9 @@ func _process(delta: float) -> void:
 			$Timer.start()
 			hp-=40
 			if hp <= 0 :
-				$"..".queue_free()
+				$"../Srodek/CPUParticles3D2".emitting = true
+				start_timer = true
+				GlobalWeaponTimer.score += randi_range(1,3)
 				
 	else:
 		pass

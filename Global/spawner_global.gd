@@ -1,7 +1,7 @@
 extends Node
 
 var runda = 0
-var czas_rundy: float = 120
+var czas_rundy: float = 60
 var round_playing: bool = false
 
 func _process(delta: float) -> void:
@@ -10,3 +10,6 @@ func _process(delta: float) -> void:
 		round_playing = true
 	if round_playing == true and AaGlobal.Is_Playing == true:
 		czas_rundy -= delta
+	if czas_rundy <= 0:
+		czas_rundy = 60
+		round_playing = false

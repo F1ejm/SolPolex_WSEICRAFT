@@ -10,7 +10,7 @@ func _process(delta: float) -> void:
 		GlobalWeaponTimer.death_screen = false
 		visible = true
 
-
+	$MarginContainer/VBoxContainer/Label2.text = " Your Score" + str(GlobalWeaponTimer.score) 
 
 
 func _on_quit_pressed() -> void:
