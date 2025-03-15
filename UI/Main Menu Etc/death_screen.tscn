@@ -46,19 +46,9 @@ layout_mode = 2
 text = "You Died"
 label_settings = SubResource("LabelSettings_2nkku")
 
-[node name="Retry" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Play Again"
-
-[node name="Main_Menu" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Main Menu"
-
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 process_mode = 3
 layout_mode = 2
 text = "Quit"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Retry" to="." method="_on_retry_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Main_Menu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
