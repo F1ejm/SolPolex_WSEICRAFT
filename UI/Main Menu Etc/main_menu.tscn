@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://ba28u21brsj67"]
+[gd_scene load_steps=4 format=3 uid="uid://ba28u21brsj67"]
 
 [ext_resource type="Script" uid="uid://cu5fdhtfqcpre" path="res://UI/Main Menu Etc/main_menu.gd" id="1_pkn2l"]
+[ext_resource type="Texture2D" uid="uid://dkbkahfsaaynt" path="res://Assets/2D/main_screen.jpg" id="2_pga83"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_pkn2l"]
 font_size = 80
@@ -22,7 +23,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+color = Color(0, 0, 0, 0.498039)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -58,6 +59,12 @@ text = "Settings"
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Quit"
+
+[node name="MainScreen" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(557.019, 323.5)
+scale = Vector2(0.750569, 0.75057)
+texture = ExtResource("2_pga83")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
