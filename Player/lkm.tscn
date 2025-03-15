@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://7fmfm18n2bnh"]
+[gd_scene load_steps=9 format=3 uid="uid://7fmfm18n2bnh"]
 
 [ext_resource type="Script" uid="uid://dwq045gc5smqh" path="res://Player/lkm.gd" id="1_vyu5r"]
 [ext_resource type="Script" uid="uid://c8ssfdq608h0n" path="res://Player/Gun_Resource.gd" id="2_6js81"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://d3wld13bqj3f4" path="res://Assets/3D/lkm_giwera.gd" id="4_r0gni"]
 [ext_resource type="PackedScene" uid="uid://b7vfjbynunlu" path="res://Assets/3D/lkm_magazynek.glb" id="5_r0gni"]
 [ext_resource type="Script" uid="uid://b67il3srlg43h" path="res://Assets/3D/lkm_magazynek.gd" id="6_7mlp6"]
+[ext_resource type="AudioStream" uid="uid://d0xuvo3bqx3l4" path="res://Assets/laserShoot.wav" id="7_7mlp6"]
 
 [sub_resource type="Resource" id="Resource_flm2t"]
 script = ExtResource("2_6js81")
@@ -26,7 +27,7 @@ transform = Transform3D(0.517665, 0, 0, 0, 0.408402, 0, 0, 0, 2.41428, 0, 0, 0)
 visible = false
 
 [node name="Miejsce_Spawnu_Pocisku" type="Node3D" parent="CSGBox3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.516811, 0.0173339)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.996942, 0.516811, -0.0234026)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="CSGBox3D/Miejsce_Spawnu_Pocisku"]
 transform = Transform3D(0.38635, 0, 0, 0, 0.661114, 0, 0, 0, 0.414203, 0, 0, -0.147186)
@@ -40,5 +41,9 @@ script = ExtResource("4_r0gni")
 [node name="lkm_magazynek" parent="." instance=ExtResource("5_r0gni")]
 transform = Transform3D(-0.82, 0, -7.16867e-08, 0, 0.82, 0, 7.16867e-08, 0, -0.82, 0, 0, 0)
 script = ExtResource("6_7mlp6")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_7mlp6")
+volume_db = -9.109
 
 [connection signal="timeout" from="Timer" to="lkm_giwera" method="_on_timer_timeout"]

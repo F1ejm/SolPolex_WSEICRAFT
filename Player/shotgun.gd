@@ -10,7 +10,10 @@ var obrazenia
 
 @export var ilosc_pociskow: int = 20
 
+
 func _ready() -> void:
+	
+	
 	szybkosc_strzalu = gun_stats.szybkosc_strzalu
 	speed = gun_stats.szybkosc_lotu
 	magazynek = gun_stats.wielkosc_magazynku
@@ -41,13 +44,16 @@ var bullet_path = load("res://Player/bullet.tscn")
 
 
 func Shot():
+	
+	$AudioStreamPlayer.play(0)
+	
 	# Odrzut
 	if not AaGlobal.Player.is_on_floor():
 		var dystans = miejsce_spawnu_pocisku.global_position - AaGlobal.Player.srodek.global_position
-		AaGlobal.Player.velocity = Vector3(-dystans.x * 30, -dystans.y * 10, -dystans.z * 30)
+		AaGlobal.Player.velocity = Vector3(-dystans.x *50, -dystans.y * 130, -dystans.z * 50)
 	if AaGlobal.Player.is_on_floor():
 		var dystans = miejsce_spawnu_pocisku.global_position - AaGlobal.Player.srodek.global_position
-		AaGlobal.Player.velocity = Vector3(-dystans.x * 20, -dystans.y * 10, -dystans.z * 20)
+		AaGlobal.Player.velocity = Vector3(-dystans.x * 80, -dystans.y * 100, -dystans.z * 80)
 	 
 	
 	var bullet = bullet_path.instantiate()
@@ -56,6 +62,7 @@ func Shot():
 	bullet.global_position = miejsce_spawnu_pocisku.global_position
 	bullet.global_transform.basis = miejsce_spawnu_pocisku.global_transform.basis
 	bullet.obrazenia = obrazenia
+	bullet.odrzut = 1
 	bullet.speed = speed
 	
 	for i in range(ilosc_pociskow):

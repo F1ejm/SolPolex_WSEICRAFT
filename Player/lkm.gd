@@ -38,6 +38,8 @@ func _process(delta: float) -> void:
 		GlobalWeaponTimer.amunicja_lkm += 1
 		Shot(delta)
 		
+		$AudioStreamPlayer.play(0)
+		
 	if not Input.is_action_pressed("strzał") and szybkosc_strzalu <= 0 :
 		GlobalWeaponTimer.timer = true
 		
@@ -51,11 +53,11 @@ func Shot(delta):
 	#Odrzut 
 	if not AaGlobal.Player.is_on_floor():
 		var dystans = miejsce_spawnu_pocisku.global_position - AaGlobal.Player.srodek.global_position
-		AaGlobal.Player.velocity += -(dystans) * 3
+		AaGlobal.Player.velocity += -(dystans) * 27
 	
 	if AaGlobal.Player.is_on_floor():
 		var dystans = miejsce_spawnu_pocisku.global_position - AaGlobal.Player.srodek.global_position
-		AaGlobal.Player.velocity += Vector3(-dystans.x * 8, - dystans.y, - dystans.z * 8)
+		AaGlobal.Player.velocity += Vector3(-dystans.x * 27, - dystans.y * 27, - dystans.z * 27)
 
 	var bullet = bullet_path.instantiate()
 	get_tree().current_scene.add_child(bullet) 
@@ -63,4 +65,5 @@ func Shot(delta):
 	bullet.global_position = miejsce_spawnu_pocisku.global_position
 	bullet.global_transform.basis = miejsce_spawnu_pocisku.global_transform.basis
 	bullet.obrazenia = obrazenia
+	bullet.odrzut = 0.1
 	bullet.speed = speed

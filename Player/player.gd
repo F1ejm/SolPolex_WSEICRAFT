@@ -17,7 +17,7 @@ const mouse_sens = 0.2
 @export var walk_speed = 5.0
 @export var sprint_speed = 8.0
 @export var crouch_speed = 3.0
-@export var jump_force = 6.0
+@export var jump_force = 12.0
 var current_speed = 5.0
 
 # movement
@@ -65,9 +65,9 @@ func _physics_process(delta: float) -> void:
 	
 	if not is_on_floor() and not wallrunning:
 		if velocity.y >= 0:
-			velocity += get_gravity() * delta * 2
+			velocity += get_gravity() * delta * 3
 		else:
-			velocity += get_gravity() * delta * 4
+			velocity += get_gravity() * delta * 6
 
 	if is_on_floor() or is_on_wall():
 		double_jump_controller = 1
@@ -76,6 +76,7 @@ func _physics_process(delta: float) -> void:
 
 	
 	if Input.is_action_just_pressed("jump"):
+		$AudioStreamPlayer.play(0)
 		if is_on_floor():
 			velocity.y = jump_force
 			sliding = false
